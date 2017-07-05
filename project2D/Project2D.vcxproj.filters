@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Design Patterns">
+      <UniqueIdentifier>{20506338-a415-4be1-a907-df6e3f704338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Containers">
+      <UniqueIdentifier>{3ab0da17-6128-440b-910c-5acd27ba3f73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{f1ef0c59-7174-494e-a5ed-9add63d23de8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Other">
+      <UniqueIdentifier>{8ed1ae26-fcd1-4bb7-9e1d-d28f5a851e46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Design Patterns\Headers">
+      <UniqueIdentifier>{0ac78e8a-4519-4fb6-8aec-3450e3d932b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Design Patterns\CPPs">
+      <UniqueIdentifier>{7be39fc4-767d-41d3-a8c8-b5a81504a0fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Containers\Headers">
+      <UniqueIdentifier>{cf11939d-821e-4fc4-87b0-5d23b4c754fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Containers\CPPs">
+      <UniqueIdentifier>{332d9f3e-9d97-4201-9559-46c7d8a3f9a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Headers">
+      <UniqueIdentifier>{eb8befab-d01b-41a6-9f43-8c78679c4743}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\CPPs">
+      <UniqueIdentifier>{d3aa5578-a470-4c74-9b3f-76fe532c6157}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Other\Headers">
+      <UniqueIdentifier>{b6a2f373-3804-484e-8d9d-25bcf09f1247}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Other\CPPs">
+      <UniqueIdentifier>{c121f1de-27e8-4871-b606-8b18ec7e2739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI">
+      <UniqueIdentifier>{2947a2ca-ae8c-450e-ada8-3096250db22e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Headers">
+      <UniqueIdentifier>{a25fd9ef-3ca0-419f-982d-dfa4626385c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\CPPs">
+      <UniqueIdentifier>{fa3faf49-6e16-4475-946b-0fae7ab8588a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ObjectPool.cpp">
+      <Filter>Design Patterns\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Design Patterns\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMachine.cpp">
+      <Filter>Design Patterns\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix2.cpp">
+      <Filter>Math\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix3.cpp">
+      <Filter>Math\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix4.cpp">
+      <Filter>Math\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Math\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Math\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector4.cpp">
+      <Filter>Math\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Application2D.cpp">
+      <Filter>Other\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Other\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Design Patterns\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Agent.cpp">
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="IBehaviour.cpp">
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application2D.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectPool.h">
+      <Filter>Design Patterns\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Design Patterns\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Design Patterns\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Design Patterns\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.h">
+      <Filter>Design Patterns\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AssociativeArray.h">
+      <Filter>Containers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicArray.h">
+      <Filter>Containers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Containers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphNode.h">
+      <Filter>Containers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedLists.h">
+      <Filter>Containers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ListNode.h">
+      <Filter>Containers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Containers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix2.h">
+      <Filter>Math\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix3.h">
+      <Filter>Math\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix4.h">
+      <Filter>Math\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Math\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Math\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector4.h">
+      <Filter>Math\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorCast.h">
+      <Filter>Math\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Design Patterns\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Agent.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="IBehaviour.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
