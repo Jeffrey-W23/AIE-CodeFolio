@@ -90,6 +90,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application2D.cpp" />
+    <ClCompile Include="AStar.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="IBehaviour.cpp" />
@@ -107,11 +108,15 @@
   <ItemGroup>
     <ClInclude Include="Application2D.h" />
     <ClInclude Include="AssociativeArray.h" />
+    <ClInclude Include="AStar.h" />
+    <ClInclude Include="Defines.h" />
     <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Agent.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="GraphNode.h" />
+    <ClInclude Include="GridNode.h" />
+    <ClInclude Include="Heap.h" />
     <ClInclude Include="IBehaviour.h" />
     <ClInclude Include="LinkedLists.h" />
     <ClInclude Include="ListNode.h" />
@@ -119,6 +124,7 @@
     <ClInclude Include="Matrix3.h" />
     <ClInclude Include="Matrix4.h" />
     <ClInclude Include="ObjectPool.h" />
+    <ClInclude Include="AStarNode.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Stack.h" />

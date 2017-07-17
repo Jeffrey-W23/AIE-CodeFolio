@@ -102,6 +102,9 @@
     <ClCompile Include="IBehaviour.cpp">
       <Filter>AI\CPPs</Filter>
     </ClCompile>
+    <ClCompile Include="AStar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application2D.h">
@@ -172,6 +175,21 @@
     </ClInclude>
     <ClInclude Include="IBehaviour.h">
       <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AStarNode.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GridNode.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AStar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Heap.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
