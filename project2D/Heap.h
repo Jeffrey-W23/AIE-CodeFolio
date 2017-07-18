@@ -1,12 +1,13 @@
 #pragma once
 #include "DynamicArray.h"
+#include "AStarNode.h"
 #include <math.h>
 
-template <typename T>
+//template <typename T>
 class Heap
 {
 public:
-	void Push(T data)
+	void Push(AStarNode* data)
 	{
 		// Add data to end of array.
 		m_Data.PushBack(data);
@@ -21,9 +22,9 @@ public:
 
 			int parent = GetParentIndex(current);
 
-				if (m_Data[current] < m_Data[parent])
+				if (m_Data[current]->m_nFScore < m_Data[parent]->m_nFScore)
 				{
-					T swap = m_Data[current];
+					AStarNode* swap = m_Data[current];
 					m_Data[current] = m_Data[parent];
 					m_Data[parent] = swap;
 
@@ -35,9 +36,9 @@ public:
 		}	
 	}
 
-	T Pop()
+	AStarNode* Pop()
 	{
-		int result = m_Data[0];
+		AStarNode* result = m_Data[0];
 
 		// Replace first element with last element.
 		int last = m_Data.Size() - 1;
@@ -48,21 +49,21 @@ public:
 		
 		while (true)
 		{
-			int child0 = GetChildIndex(current, 0);
+			int child0 = GetChildIndex(current, 1);
 
 			if (child0 > last)
 				break;
 
-			int child1 = GetChildIndex(current, 1);
+			int child1 = GetChildIndex(current, 2);
 			int smallerChild = child0;
 
-			if (child1 <= last && m_Data[child1] < m_Data[smallerChild])
+			if (child1 <= last && m_Data[child1]->m_nFScore < m_Data[smallerChild]->m_nFScore)
 				smallerChild = child1;
 
 			// Check if smaller than parent, if so swap.
-			if (m_Data[smallerChild] < m_Data[current])
+			if (m_Data[smallerChild]->m_nFScore < m_Data[current]->m_nFScore)
 			{
-				T swap = m_Data[current];
+				AStarNode* swap = m_Data[current];
 				m_Data[current] = m_Data[smallerChild];
 				m_Data[smallerChild] = swap;
 
@@ -96,7 +97,18 @@ public:
 		return (2 * parent) + whichChild;
 	}
 
+	bool Contains(AStarNode* pData)
+	{
+		for (int i = 0; i < m_Data.Size(); ++i)
+		{
+			if (m_Data[i] == pData)
+				return true;
+		}
+
+		return false;
+	}
+
 private:
-	DynamicArray<T> m_Data;
+	DynamicArray<AStarNode*> m_Data;
 
 };

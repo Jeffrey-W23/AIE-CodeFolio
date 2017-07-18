@@ -11,12 +11,13 @@ struct AStarEdge
 
 struct AStarNode
 {
-	AStarNode()
+	AStarNode(int nIndex)
 	{
 		m_nPrev = nullptr;
 		m_nGScore = 0;
 		m_nHScore = 0;
 		m_nFScore = 0;
+		m_nIndex = nIndex;
 	}
 
 	virtual ~AStarNode()
@@ -32,6 +33,7 @@ struct AStarNode
 	int m_nGScore;
 	int m_nHScore;
 	int m_nFScore;
+	int m_nIndex;
 
 	DynamicArray<AStarEdge*> m_AdjacentList;
 };

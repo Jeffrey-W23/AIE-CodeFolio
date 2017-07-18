@@ -4,10 +4,10 @@
 
 struct GridNode : public AStarNode
 {
-	GridNode(Vector2 pos, int nIndeX, int nIndexY) : AStarNode()
+	GridNode(Vector2 pos, int nIndex,  int nIndexX, int nIndexY) : AStarNode(nIndex)
 	{
 		m_v2Pos = pos;
-		m_nIndexX = nIndeX;
+		m_nIndexX = nIndexX;
 		m_nIndexY = nIndexY;
 	}
 

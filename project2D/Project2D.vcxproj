@@ -91,8 +91,10 @@
   <ItemGroup>
     <ClCompile Include="Application2D.cpp" />
     <ClCompile Include="AStar.cpp" />
+    <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="FunctionPointerTestClass.cpp" />
     <ClCompile Include="IBehaviour.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrix2.cpp" />
@@ -109,10 +111,12 @@
     <ClInclude Include="Application2D.h" />
     <ClInclude Include="AssociativeArray.h" />
     <ClInclude Include="AStar.h" />
+    <ClInclude Include="Grid.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="FunctionPointerTestClass.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="GraphNode.h" />
     <ClInclude Include="GridNode.h" />
