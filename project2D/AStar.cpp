@@ -1,6 +1,7 @@
 #include "AStar.h"
 #include "GridNode.h"
 #include <math.h>
+#include "Grid.h" //Has to be included? include loop now
 
 AStar::AStar(int nMaxNodes)
 {
@@ -12,7 +13,6 @@ AStar::~AStar()
 {
 	delete[] m_ClosedList;
 }
-
 
 bool AStar::CalculatePath(AStarNode* pStart, AStarNode* pEnd, DynamicArray<AStarNode*>* finishedPath)
 {
@@ -27,8 +27,12 @@ bool AStar::CalculatePath(AStarNode* pStart, AStarNode* pEnd, DynamicArray<AStar
 	// Set start nodes G score to zero
 	pStart->m_nGScore = 0;
 
+	// Call function pointer
+	Grid fn_Grid;
+	fn_Grid.Callfunction(pStart, pEnd);
+
 	// Calculate start nodes H score (for now set to zero).
-	pStart->m_nHScore = CalcHeuristic(pStart, pEnd);
+	pStart->m_nHScore = fn_Grid.Callfunction(pStart, pEnd);
 	
 	// Calculate start nodes F score.
 	pStart->m_nFScore = pStart->m_nGScore + pStart->m_nHScore;
@@ -102,7 +106,7 @@ bool AStar::CalculatePath(AStarNode* pStart, AStarNode* pEnd, DynamicArray<AStar
 				pNeighbour->m_nGScore = pCurrentNode->m_nGScore + nCost;
 
 				// Calculate H Score.
-				pNeighbour->m_nHScore = CalcHeuristic(pNeighbour, pEnd);;
+				pNeighbour->m_nHScore = fn_Grid.Callfunction(pStart, pEnd);
 
 				// Calculate F Score.
 				pNeighbour->m_nFScore = pNeighbour->m_nGScore + pNeighbour->m_nHScore;
@@ -118,15 +122,4 @@ bool AStar::CalculatePath(AStarNode* pStart, AStarNode* pEnd, DynamicArray<AStar
 
 	// No path found if we got to here, so return false.
 	return false;
-}
-
-int AStar::CalcHeuristic(AStarNode* pNode, AStarNode* pEnd)
-{
-	// Make custom Heuristic for higher then credit mark
-
-	// Manhattan  Distance (Melb)
-	int difX = ((GridNode*)pNode)->m_nIndexX - ((GridNode*)pEnd)->m_nIndexX;
-	int difY = ((GridNode*)pNode)->m_nIndexY - ((GridNode*)pEnd)->m_nIndexY;
-
-	return (abs(difX) + abs(difY)) * 10;
 }

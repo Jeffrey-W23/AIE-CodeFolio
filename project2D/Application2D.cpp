@@ -2,13 +2,6 @@
 #include "Texture.h"
 #include "Font.h"
 #include "Input.h"
-#include "Defines.h"
-#include "GridNode.h"
-#include "AStar.h"
-#include "DynamicArray.h"
-#include "AStarNode.h"
-
-struct GridNode;
 
 Application2D::Application2D() {
 
@@ -29,9 +22,13 @@ bool Application2D::startup() {
 
 	m_audio = new aie::Audio("./audio/powerup.wav");
 
+	m_Grid = new Grid();
+
 	m_cameraX = -300;
 	m_cameraY = -150;
 	m_timer = 0;
+
+	return true;
 }
 
 void Application2D::shutdown() {
@@ -40,6 +37,7 @@ void Application2D::shutdown() {
 	delete m_texture;
 	delete m_shipTexture;
 	delete m_2dRenderer;
+	delete m_Grid;
 }
 
 void Application2D::update(float deltaTime) {
@@ -82,7 +80,7 @@ void Application2D::draw() {
 	// begin drawing sprites
 	m_2dRenderer->begin();
 
-	DrawGrid(m_2dRenderer);
+	m_Grid->DrawGrid(m_2dRenderer);
 
 	//// demonstrate animation
 	//m_2dRenderer->setUVRect(int(m_timer) % 8 / 8.0f, 0, 1.f / 8, 1.f / 8);

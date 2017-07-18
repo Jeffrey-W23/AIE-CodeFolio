@@ -1,11 +1,8 @@
 #pragma once
-
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Audio.h"
-
-struct GridNode;
-class AStar;
+#include "Grid.h"
 
 class Application2D : public aie::Application {
 public:
@@ -30,7 +27,5 @@ protected:
 	float m_cameraX, m_cameraY;
 	float m_timer;
 
-	GridNode** m_ppGrid;
-
-	AStar* m_pAStar;
+	Grid* m_Grid;
 };

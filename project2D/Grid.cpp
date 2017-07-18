@@ -1,4 +1,26 @@
 #include "Grid.h"
+#include <math.h>
+#include "Renderer2D.h"
+#include "Defines.h"
+#include "GridNode.h"
+#include "AStar.h"
+#include "DynamicArray.h"
+#include "AStarNode.h"
+
+struct GridNode;
+using namespace aie;
+
+// Did I put it in the right place, am I doing it right? ASK RICHARD
+int Heuristic(AStarNode* pNode, AStarNode* pEnd)
+{
+	// Make custom Heuristic for higher then credit mark
+
+	// Manhattan Distance (Melbourne Method)
+	int difX = ((GridNode*)pNode)->m_nIndexX - ((GridNode*)pEnd)->m_nIndexX;
+	int difY = ((GridNode*)pNode)->m_nIndexY - ((GridNode*)pEnd)->m_nIndexY;
+
+	return (abs(difX) + abs(difY)) * 10;
+}
 
 Grid::Grid()
 {
@@ -108,7 +130,8 @@ Grid::Grid()
 	// Setup AStar
 	m_pAStar = new AStar(GRID_SIZE * GRID_SIZE);
 
-	return true;
+	// Set Function pointer
+	SetFunction(&Heuristic);
 }
 
 
@@ -124,7 +147,7 @@ Grid::~Grid()
 	delete[]m_ppGrid;
 }
 
-void DrawGrid(Renderer2D m_2dRenderer)
+void Grid::DrawGrid(Renderer2D* m_2dRenderer)
 {
 	// Draw the Grid
 	for (int i = 0; i < GRID_SIZE * GRID_SIZE; ++i)
@@ -158,4 +181,14 @@ void DrawGrid(Renderer2D m_2dRenderer)
 		m_2dRenderer->drawBox(pNode->m_v2Pos.x, pNode->m_v2Pos.y, NODE_SIZE / 2, NODE_SIZE / 2);
 		m_2dRenderer->setRenderColour(0xFFFFFFFF);
 	}
+}
+
+int Grid::Callfunction(AStarNode* pStart, AStarNode* pEnd)
+{
+	return fn_CalcHeuristic(pStart, pEnd);
+}
+
+void Grid::SetFunction(CalcHeuristic func)
+{
+	fn_CalcHeuristic = func;
 }

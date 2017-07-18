@@ -94,7 +94,7 @@
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Agent.cpp" />
-    <ClCompile Include="FunctionPointerTestClass.cpp" />
+    <ClCompile Include="FunctionPointerExampleClass.cpp" />
     <ClCompile Include="IBehaviour.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrix2.cpp" />
@@ -116,7 +116,7 @@
     <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Agent.h" />
-    <ClInclude Include="FunctionPointerTestClass.h" />
+    <ClInclude Include="FunctionPointerExampleClass.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="GraphNode.h" />
     <ClInclude Include="GridNode.h" />

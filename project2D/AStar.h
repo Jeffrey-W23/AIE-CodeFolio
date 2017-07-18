@@ -8,7 +8,6 @@ public:
 	AStar(int nMaxNodes);
 	~AStar();
 	bool CalculatePath(AStarNode* pStart, AStarNode* pEnd, DynamicArray<AStarNode*>* finishedPath);
-	int CalcHeuristic(AStarNode* pNode, AStarNode* pEnd);
 
 private:
 	Heap m_OpenList;

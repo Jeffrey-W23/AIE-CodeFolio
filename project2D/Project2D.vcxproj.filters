@@ -102,14 +102,14 @@
     <ClCompile Include="IBehaviour.cpp">
       <Filter>AI\CPPs</Filter>
     </ClCompile>
-    <ClCompile Include="AStar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FunctionPointerTestClass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Grid.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="AStar.cpp">
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="FunctionPointerExampleClass.cpp">
+      <Filter>Other\CPPs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -192,16 +192,16 @@
       <Filter>Other\Headers</Filter>
     </ClInclude>
     <ClInclude Include="AStar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Heap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FunctionPointerTestClass.h">
-      <Filter>Header Files</Filter>
+      <Filter>AI\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Grid.h">
-      <Filter>Header Files</Filter>
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Heap.h">
+      <Filter>Containers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionPointerExampleClass.h">
+      <Filter>Other\Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
