@@ -1,7 +1,6 @@
 #include "AStar.h"
 #include "GridNode.h"
 #include <math.h>
-#include "Grid.h" //Has to be included? include loop now
 
 AStar::AStar(int nMaxNodes)
 {
@@ -12,6 +11,19 @@ AStar::AStar(int nMaxNodes)
 AStar::~AStar()
 {
 	delete[] m_ClosedList;
+}
+
+int AStar::Callfunction(AStarNode* pStart, AStarNode* pEnd)
+{
+	if (fn_CalcHeuristic)
+		return fn_CalcHeuristic(pStart, pEnd);
+	
+	return 0;
+}
+
+void AStar::SetFunction(CalcHeuristic func)
+{
+	fn_CalcHeuristic = func;
 }
 
 bool AStar::CalculatePath(AStarNode* pStart, AStarNode* pEnd, DynamicArray<AStarNode*>* finishedPath)
@@ -27,12 +39,8 @@ bool AStar::CalculatePath(AStarNode* pStart, AStarNode* pEnd, DynamicArray<AStar
 	// Set start nodes G score to zero
 	pStart->m_nGScore = 0;
 
-	// Call function pointer
-	Grid fn_Grid;
-	fn_Grid.Callfunction(pStart, pEnd);
-
 	// Calculate start nodes H score (for now set to zero).
-	pStart->m_nHScore = fn_Grid.Callfunction(pStart, pEnd);
+	pStart->m_nHScore = Callfunction(pStart, pEnd);
 	
 	// Calculate start nodes F score.
 	pStart->m_nFScore = pStart->m_nGScore + pStart->m_nHScore;
@@ -76,6 +84,10 @@ bool AStar::CalculatePath(AStarNode* pStart, AStarNode* pEnd, DynamicArray<AStar
 			AStarNode* pNeighbour = pCurrentNode->m_AdjacentList[i]->m_nEndNode;
 			int nCost = pCurrentNode->m_AdjacentList[i]->m_nCost;
 
+			//Walls. Skip walls.
+			if (pNeighbour->m_Blocked)
+				continue;
+
 			// Skip neighbours that are already in the closed list.
 			if (m_ClosedList[pNeighbour->m_nIndex])
 			{
@@ -106,7 +118,7 @@ bool AStar::CalculatePath(AStarNode* pStart, AStarNode* pEnd, DynamicArray<AStar
 				pNeighbour->m_nGScore = pCurrentNode->m_nGScore + nCost;
 
 				// Calculate H Score.
-				pNeighbour->m_nHScore = fn_Grid.Callfunction(pStart, pEnd);
+				pNeighbour->m_nHScore = Callfunction(pStart, pEnd);
 
 				// Calculate F Score.
 				pNeighbour->m_nFScore = pNeighbour->m_nGScore + pNeighbour->m_nHScore;

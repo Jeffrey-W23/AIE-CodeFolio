@@ -6,6 +6,7 @@
 #include "AStar.h"
 #include "DynamicArray.h"
 #include "AStarNode.h"
+#include "Defines.h"
 
 struct GridNode;
 using namespace aie;
@@ -16,10 +17,26 @@ int Heuristic(AStarNode* pNode, AStarNode* pEnd)
 	// Make custom Heuristic for higher then credit mark
 
 	// Manhattan Distance (Melbourne Method)
+	/*int difX = ((GridNode*)pNode)->m_nIndexX - ((GridNode*)pEnd)->m_nIndexX;
+	int difY = ((GridNode*)pNode)->m_nIndexY - ((GridNode*)pEnd)->m_nIndexY;
+	
+	return (abs(difX) + abs(difY)) * 10;*/
+	
+	// Digonal Shortcut Method
 	int difX = ((GridNode*)pNode)->m_nIndexX - ((GridNode*)pEnd)->m_nIndexX;
 	int difY = ((GridNode*)pNode)->m_nIndexY - ((GridNode*)pEnd)->m_nIndexY;
+	
+	difX = abs(difX);
+	difY = abs(difY);
 
-	return (abs(difX) + abs(difY)) * 10;
+	if (difX > difY)
+	{
+		return (DIAGNAL_COST * difY) + ADJACENT_COST * (difX - difY);
+	}
+	else
+	{
+		return (DIAGNAL_COST * difX) + ADJACENT_COST * (difY - difX);
+	}
 }
 
 Grid::Grid()
@@ -35,6 +52,11 @@ Grid::Grid()
 
 			Vector2 pos(x * NODE_SIZE, y * NODE_SIZE);
 			m_ppGrid[index] = new GridNode(pos, index, x, y);
+
+			if (x % 3 == 0 && y != 15)
+			{
+				m_ppGrid[index]->m_Blocked = true;
+			}
 		}
 	}
 
@@ -131,7 +153,7 @@ Grid::Grid()
 	m_pAStar = new AStar(GRID_SIZE * GRID_SIZE);
 
 	// Set Function pointer
-	SetFunction(&Heuristic);
+	m_pAStar->SetFunction(&Heuristic);
 }
 
 
@@ -155,6 +177,11 @@ void Grid::DrawGrid(Renderer2D* m_2dRenderer)
 		float x = m_ppGrid[i]->m_v2Pos.x;
 		float y = m_ppGrid[i]->m_v2Pos.y;
 
+		if (m_ppGrid[i]->m_Blocked)
+			m_2dRenderer->setRenderColour(0x303030FF);
+		else
+			m_2dRenderer->setRenderColour(0x808080FF);
+
 		m_2dRenderer->drawBox(x, y, NODE_SIZE - GRID_SPACING, NODE_SIZE - GRID_SPACING);
 
 		// Draw Adjacency
@@ -172,7 +199,7 @@ void Grid::DrawGrid(Renderer2D* m_2dRenderer)
 
 	// Draw Path
 	DynamicArray<AStarNode*> path;
-	m_pAStar->CalculatePath(m_ppGrid[2], m_ppGrid[98], &path);
+	m_pAStar->CalculatePath(m_ppGrid[31], m_ppGrid[868], &path);
 
 	for (int i = 0; i < path.Size(); ++i)
 	{
@@ -181,14 +208,4 @@ void Grid::DrawGrid(Renderer2D* m_2dRenderer)
 		m_2dRenderer->drawBox(pNode->m_v2Pos.x, pNode->m_v2Pos.y, NODE_SIZE / 2, NODE_SIZE / 2);
 		m_2dRenderer->setRenderColour(0xFFFFFFFF);
 	}
-}
-
-int Grid::Callfunction(AStarNode* pStart, AStarNode* pEnd)
-{
-	return fn_CalcHeuristic(pStart, pEnd);
-}
-
-void Grid::SetFunction(CalcHeuristic func)
-{
-	fn_CalcHeuristic = func;
 }

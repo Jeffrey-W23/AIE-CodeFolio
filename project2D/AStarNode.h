@@ -18,6 +18,7 @@ struct AStarNode
 		m_nHScore = 0;
 		m_nFScore = 0;
 		m_nIndex = nIndex;
+		m_Blocked = false;
 	}
 
 	virtual ~AStarNode()
@@ -34,6 +35,8 @@ struct AStarNode
 	int m_nHScore;
 	int m_nFScore;
 	int m_nIndex;
+
+	bool m_Blocked;
 
 	DynamicArray<AStarEdge*> m_AdjacentList;
 };
