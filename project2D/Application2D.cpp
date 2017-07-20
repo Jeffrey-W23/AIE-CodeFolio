@@ -24,6 +24,8 @@ bool Application2D::startup() {
 
 	m_Grid = new Grid();
 
+	m_Player = new Player();
+
 	m_cameraX = -300;
 	m_cameraY = -150;
 	m_timer = 0;
@@ -38,9 +40,12 @@ void Application2D::shutdown() {
 	delete m_shipTexture;
 	delete m_2dRenderer;
 	delete m_Grid;
+	delete m_Player;
 }
 
-void Application2D::update(float deltaTime) {
+void Application2D::update(float deltaTime) 
+{
+	m_Player->Update(deltaTime);
 
 	m_timer += deltaTime;
 
@@ -81,6 +86,8 @@ void Application2D::draw() {
 	m_2dRenderer->begin();
 
 	m_Grid->DrawGrid(m_2dRenderer);
+
+	m_Player->Draw(m_2dRenderer);
 
 	//// demonstrate animation
 	//m_2dRenderer->setUVRect(int(m_timer) % 8 / 8.0f, 0, 1.f / 8, 1.f / 8);

@@ -1,6 +1,6 @@
 #pragma once
- 
-class Agent;
+
+class BaseAgent;
 
 class IBehaviour {
 	
@@ -9,6 +9,6 @@ public:
 	IBehaviour();
 	~IBehaviour();
 
-	virtual bool update(Agent* agent, float deltaTime) = 0;
+	virtual void Update(BaseAgent* agent, float deltaTime) = 0;
 };
 

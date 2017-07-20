@@ -89,19 +89,12 @@ public:
 		}
 	}
 
-
-
-
-
-
-
-	// CORRECT ALL THIS!!!!!!
 	int Size()
 	{
 		return nodeCount;
 	}
 
-	bool empty()
+	bool Empty()
 	{
 		if (start->next == end)
 			return true;
@@ -109,122 +102,125 @@ public:
 			return false;
 	}
 
-	T popBack()
+	T PopBack()
 	{
 		ListNode<T>* n = end->prev;
 		T tempData = n->data;
+
 		if (n != start)
 		{
 			n->prev->next = end;
 			end->prev = n->prev;
+			
 			delete n;
+			
 			--nodeCount;
+			
 			return tempData;
 		}
+
 		else
 			return default;
-
-
 	}
 
-	T popFront()
+	T PopFront()
 	{
 		ListNode<T>* n = start->next;
 		T tempData = n->data;
+
 		if (n != end)
 		{
 			n->next->prev = start;
 			start->next = n->next;
+
 			delete n;
+
 			--nodeCount;
+
 			return tempData;
 		}
+
 		else
 			return default;
-
 	}
 
-	void clear()
+	void Clear()
 	{
 		while (start->next != end)
 			popBack();
 	}
 
-	void erase(int index)
+	void Erase(int index)
 	{
 		ListNode<T>* current = start;
+
 		for (int i = 0; i < index; ++i)
 		{
 			if (current->next == end)
 			{
 				cout << "Invalid index location!" << endl;
+
 				return;
 			}
+
 			current = current->next;
 		}
+		
 		if (current == start || current == end)
 		{
 			cout << "Cannot delete start and end!" << endl;
+
 			return;
 		}
+
 		current->next->prev = current->prev;
 		current->prev->next = current->next;
+
 		delete current;
+
 		--nodeCount;
 	}
 
-	void remove(T value)
+	void Remove(T value)
 	{
 		ListNode<T>* temp = nullptr;
 		ListNode<T>* current = start->next;
+
 		while (current->next != end)
 		{
 			if (current->next == end)
 			{
 				cout << "Invalid index location!" << endl;
+
 				return;
 			}
+
 			if (current->data == value)
 			{
 				temp = current->prev;
 				current->next->prev = current->prev;
 				current->prev->next = current->next;
+
 				delete current;
+
 				current = temp;
 				--nodeCount;
 			}
+
 			current = current->next;
 		}
 	}
 
-	void printList()
+	void PrintList()
 	{
 		ListNode<T>* current = start->next;
+
 		while (current->next != end)
 		{
 			cout << current->data << endl;
 			current = current->next;
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-	// Pop back
-
-	// Pop Front
-
-	//clear
-	
-	//erase: remove based on an index passed in
-
-	//remove: remove all elements that have data which matches the value passed in
 
 	T default;
 	int nodeCount = 0;

@@ -3,6 +3,8 @@
 #include "DynamicArray.h" 
 #include "State.h"
 #include "Stack.h"
+#include "Renderer2D.h"
+using namespace aie;
 
 //--------------------------------------------------------------------------------------
 // ShareManager object.
@@ -27,7 +29,7 @@ public:
 	// Param:
 	//		deltaTime: Pass in deltaTime. A number that updates per second.
 	//--------------------------------------------------------------------------------------
-	void Update();
+	void Update(float deltaTime);
 	
 	//--------------------------------------------------------------------------------------
 	// Draw: A function to render (or "draw") states to the screen.
@@ -35,7 +37,7 @@ public:
 	// Param:
 	//		renderer2D: a pointer to Renderer2D for rendering objects to screen.
 	//--------------------------------------------------------------------------------------
-	void Draw();
+	void Draw(Renderer2D* m_2dRenderer);
 
 	//--------------------------------------------------------------------------------------
 	// PushState: A function to push a state onto the statemachine stack.

@@ -96,9 +96,6 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Design Patterns\CPPs</Filter>
     </ClCompile>
-    <ClCompile Include="Agent.cpp">
-      <Filter>AI\CPPs</Filter>
-    </ClCompile>
     <ClCompile Include="IBehaviour.cpp">
       <Filter>AI\CPPs</Filter>
     </ClCompile>
@@ -110,6 +107,27 @@
     </ClCompile>
     <ClCompile Include="FunctionPointerExampleClass.cpp">
       <Filter>Other\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Idle.cpp">
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Patrol.cpp">
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardController.cpp">
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Controlled.cpp">
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseAgent.cpp">
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Guard.cpp">
+      <Filter>AI\CPPs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -176,9 +194,6 @@
     <ClInclude Include="Entity.h">
       <Filter>Design Patterns\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Agent.h">
-      <Filter>AI\Headers</Filter>
-    </ClInclude>
     <ClInclude Include="IBehaviour.h">
       <Filter>AI\Headers</Filter>
     </ClInclude>
@@ -202,6 +217,27 @@
     </ClInclude>
     <ClInclude Include="FunctionPointerExampleClass.h">
       <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Patrol.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Idle.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardController.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Controlled.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseAgent.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Guard.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>AI\Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

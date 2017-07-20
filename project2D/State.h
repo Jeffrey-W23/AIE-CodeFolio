@@ -1,4 +1,6 @@
 #pragma once
+#include "Renderer2D.h"
+using namespace aie;
 
 class StateMachine;
 
@@ -25,7 +27,7 @@ public:
 	// Param:
 	//		pMachine: a pointer to StateMachine.
 	//--------------------------------------------------------------------------------------
-	virtual void onEnter() = 0;
+	virtual void onEnter(StateMachine* pMachine) = 0;
 
 	//--------------------------------------------------------------------------------------
 	// onUpdate: A virtual function to update objects.
@@ -34,7 +36,7 @@ public:
 	//		deltaTime: Pass in deltaTime. A number that updates per second.
 	//		pMachine: a pointer to StateMachine.
 	//--------------------------------------------------------------------------------------
-	virtual void onUpdate() = 0;
+	virtual void onUpdate(float deltaTime, StateMachine* pMachine) = 0;
 
 	//--------------------------------------------------------------------------------------
 	// onDraw: A virtual function to render (or "draw") objects to the screen.
@@ -42,7 +44,7 @@ public:
 	// Param:
 	//		renderer2D: a pointer to Renderer2D for rendering objects to screen.
 	//--------------------------------------------------------------------------------------
-	virtual void onDraw() = 0;
+	virtual void onDraw(Renderer2D* m_2dRenderer) = 0;
 	
 	//--------------------------------------------------------------------------------------
 	// onExit: A virtual function that runs on state exit.
@@ -50,5 +52,5 @@ public:
 	// Param:
 	//		pMachine: a pointer to StateMachine.
 	//--------------------------------------------------------------------------------------
-	virtual void onExit() = 0;
+	virtual void onExit(StateMachine* pMachine) = 0;
 };

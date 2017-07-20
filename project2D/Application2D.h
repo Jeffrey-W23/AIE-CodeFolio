@@ -3,6 +3,7 @@
 #include "Renderer2D.h"
 #include "Audio.h"
 #include "Grid.h"
+#include "Player.h"
 
 class Application2D : public aie::Application {
 public:
@@ -28,4 +29,5 @@ protected:
 	float m_timer;
 
 	Grid* m_Grid;
+	Player* m_Player;
 };

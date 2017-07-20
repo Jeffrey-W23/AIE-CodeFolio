@@ -1,6 +1,8 @@
 //#include, using etc
 #include "StateMachine.h"
 #include <crtdbg.h>
+#include "Renderer2D.h"
+using namespace aie;
 
 //--------------------------------------------------------------------------------------
 // Default Constructor.
@@ -30,7 +32,7 @@ StateMachine::~StateMachine()
 // Param:
 //		deltaTime: Pass in deltaTime. A number that updates per second.
 //--------------------------------------------------------------------------------------
-void StateMachine::Update()
+void StateMachine::Update(float deltaTime)
 {
 	_ASSERT(m_CurrentStack.Size() > 0);
 	if (m_CurrentStack.Size() <= 0)
@@ -38,9 +40,9 @@ void StateMachine::Update()
 
 	//Update in background not needed.
 	/*if (backUpdate)
-		m_CurrentStack.SecondLast()->onUpdate(deltaTime, this);*/
+	m_CurrentStack.SecondLast()->onUpdate(deltaTime, this);*/
 
-	m_CurrentStack.Top()->onUpdate();
+	m_CurrentStack.Top()->onUpdate(deltaTime, this);
 }
 
 //--------------------------------------------------------------------------------------
@@ -49,16 +51,18 @@ void StateMachine::Update()
 // Param:
 //		renderer2D: a pointer to Renderer2D for rendering objects to screen.
 //--------------------------------------------------------------------------------------
-void StateMachine::Draw()
+void StateMachine::Draw(Renderer2D* m_2dRenderer)
 {
+	_ASSERT(m_2dRenderer);
+
 	_ASSERT(m_CurrentStack.Size() > 0);
 	if (m_CurrentStack.Size() <= 0)
 		return;
 
 	if (backUpdate)
-		m_CurrentStack.SecondLast()->onDraw();
+		m_CurrentStack.SecondLast()->onDraw(m_2dRenderer);
 
-	m_CurrentStack.Top()->onDraw();
+	m_CurrentStack.Top()->onDraw(m_2dRenderer);
 }
 
 //--------------------------------------------------------------------------------------
@@ -70,10 +74,10 @@ void StateMachine::Draw()
 void StateMachine::PushState(int nStateIndex)
 {
 	if (m_CurrentStack.Size() > 0)
-		m_CurrentStack.Top()->onExit();
+		m_CurrentStack.Top()->onExit(this);
 
 	m_CurrentStack.Push(m_StateList[nStateIndex]);
-	m_CurrentStack.Top()->onEnter();
+	m_CurrentStack.Top()->onEnter(this);
 }
 
 //--------------------------------------------------------------------------------------
@@ -82,12 +86,12 @@ void StateMachine::PushState(int nStateIndex)
 void StateMachine::PopState()
 {
 	if (m_CurrentStack.Size() > 0)
-		m_CurrentStack.Top()->onExit();
+		m_CurrentStack.Top()->onExit(this);
 
 	m_CurrentStack.Pop();
 
 	if (m_CurrentStack.Size() > 0)
-		m_CurrentStack.Top()->onEnter();
+		m_CurrentStack.Top()->onEnter(this);
 }
 
 //--------------------------------------------------------------------------------------
@@ -96,7 +100,7 @@ void StateMachine::PopState()
 void StateMachine::PopAll()
 {
 	if (m_CurrentStack.Size() > 0)
-		m_CurrentStack.Top()->onExit();
+		m_CurrentStack.Top()->onExit(this);
 
 	while (m_CurrentStack.Size() > 0)
 	{
