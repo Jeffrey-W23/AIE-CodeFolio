@@ -3,6 +3,7 @@
 #include "AStarNode.h"
 #include <math.h>
 
+// Isnt a template yet, change T to what ever it is gonna be used for.
 //template <typename T>
 class Heap
 {

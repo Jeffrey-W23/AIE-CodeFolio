@@ -1,19 +1,19 @@
 #pragma once
-#include "State.h"
-#include "StateMachine.h"
+#include "AIState.h"
 #include "Renderer2D.h"
 #include "KeyboardController.h"
+#include "DynamicArray.h"
 using namespace aie;
 
-class Controlled : public State
+class Controlled : public AIState
 {
 public:
 	Controlled();
 	~Controlled();
 
-	void onEnter(StateMachine* pMachine);
-	void onExit(StateMachine* pMachine);
-	void onUpdate(float deltaTime, StateMachine* pMachine);
+	void onEnter(AIStateMachine* pMachine);
+	void onExit(AIStateMachine* pMachine);
+	void onUpdate(float deltaTime, BaseAgent* agent, AIStateMachine* pMachine);
 	void onDraw(Renderer2D* m_2dRenderer);
 
 private:

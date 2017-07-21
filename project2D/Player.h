@@ -1,6 +1,5 @@
 #pragma once
 #include "BaseAgent.h"
-#include "KeyboardController.h"
 
 class Player : public BaseAgent
 {
@@ -12,6 +11,5 @@ public:
 	void Draw(Renderer2D* m_2dRenderer);
 
 private:
-	StateMachine* m_StateMachine;
-	//KeyboardController* m_controller;
+	AIStateMachine* m_AIStateMachine;
 };

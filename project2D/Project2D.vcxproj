@@ -89,14 +89,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AIState.cpp" />
+    <ClCompile Include="AIStateMachine.cpp" />
     <ClCompile Include="Application2D.cpp" />
     <ClCompile Include="AStar.cpp" />
     <ClCompile Include="Controlled.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="BaseAgent.cpp" />
     <ClCompile Include="FunctionPointerExampleClass.cpp" />
-    <ClCompile Include="Guard.cpp" />
     <ClCompile Include="IBehaviour.cpp" />
     <ClCompile Include="Idle.cpp" />
     <ClCompile Include="KeyboardController.cpp" />
@@ -107,6 +109,7 @@
     <ClCompile Include="ObjectPool.cpp" />
     <ClCompile Include="Patrol.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Seek.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateMachine.cpp" />
     <ClCompile Include="Vector2.cpp" />
@@ -114,10 +117,13 @@
     <ClCompile Include="Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AIState.h" />
+    <ClInclude Include="AIStateMachine.h" />
     <ClInclude Include="Application2D.h" />
     <ClInclude Include="AssociativeArray.h" />
     <ClInclude Include="AStar.h" />
     <ClInclude Include="Controlled.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="DynamicArray.h" />
@@ -127,7 +133,6 @@
     <ClInclude Include="Graph.h" />
     <ClInclude Include="GraphNode.h" />
     <ClInclude Include="GridNode.h" />
-    <ClInclude Include="Guard.h" />
     <ClInclude Include="Heap.h" />
     <ClInclude Include="IBehaviour.h" />
     <ClInclude Include="Idle.h" />
@@ -143,6 +148,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Seek.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachine.h" />

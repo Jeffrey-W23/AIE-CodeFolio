@@ -126,7 +126,16 @@
     <ClCompile Include="Player.cpp">
       <Filter>AI\CPPs</Filter>
     </ClCompile>
-    <ClCompile Include="Guard.cpp">
+    <ClCompile Include="Enemy.cpp">
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Seek.cpp">
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateMachine.cpp">
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="AIState.cpp">
       <Filter>AI\CPPs</Filter>
     </ClCompile>
   </ItemGroup>
@@ -233,10 +242,19 @@
     <ClInclude Include="BaseAgent.h">
       <Filter>AI\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Guard.h">
+    <ClInclude Include="Player.h">
       <Filter>AI\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="Enemy.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Seek.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AIState.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateMachine.h">
       <Filter>AI\Headers</Filter>
     </ClInclude>
   </ItemGroup>

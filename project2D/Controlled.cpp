@@ -12,23 +12,23 @@ Controlled::Controlled()
 
 Controlled::~Controlled()
 {
+	delete m_controller;
 }
 
-void Controlled::onEnter(StateMachine* pMachine)
+void Controlled::onEnter(AIStateMachine* pMachine)
 {
 }
 
-void Controlled::onExit(StateMachine* pMachine)
+void Controlled::onExit(AIStateMachine* pMachine)
 {
 }
 
-void Controlled::onUpdate(float deltaTime, StateMachine* pMachine)
+void Controlled::onUpdate(float deltaTime, BaseAgent* agent, AIStateMachine* pMachine)
 {
 	for (int i = 0; i < m_behaviours.Size(); ++i)
-		m_behaviours[i]->Update(this, deltaTime);
+		m_behaviours[i]->Update(agent, deltaTime);
 }
 
 void Controlled::onDraw(Renderer2D* m_2dRenderer)
 {
-
 }

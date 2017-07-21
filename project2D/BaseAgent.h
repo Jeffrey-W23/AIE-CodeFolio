@@ -1,7 +1,7 @@
 #pragma once
 #include "Vector2.h"
 #include "Renderer2D.h"
-#include "StateMachine.h"
+#include "AIStateMachine.h"
 #include "DynamicArray.h"
 #include "IBehaviour.h"
 
@@ -21,5 +21,4 @@ public:
 	Vector2 m_acceleration;
 	Vector2 m_velocity;
 	Vector2 m_position;
-	//DynamicArray<IBehaviour*> m_behaviours;
 };
