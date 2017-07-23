@@ -201,11 +201,11 @@ void Grid::DrawGrid(Renderer2D* m_2dRenderer)
 	DynamicArray<AStarNode*> path;
 	m_pAStar->CalculatePath(m_ppGrid[31], m_ppGrid[868], &path);
 
-	for (int i = 0; i < path.Size(); ++i)
+	/*for (int i = 0; i < path.Size(); ++i)
 	{
 		GridNode* pNode = (GridNode*)path[i];
 		m_2dRenderer->setRenderColour(0x00FF00FF);
 		m_2dRenderer->drawBox(pNode->m_v2Pos.x, pNode->m_v2Pos.y, NODE_SIZE / 2, NODE_SIZE / 2);
 		m_2dRenderer->setRenderColour(0xFFFFFFFF);
-	}
+	}*/
 }

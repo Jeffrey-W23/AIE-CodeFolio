@@ -10,6 +10,9 @@ public:
 	void Update(float deltaTime);
 	void Draw(Renderer2D* m_2dRenderer);
 
+	int m_StartPoint;
+	int m_EndPoint;
+
 private:
 	AIStateMachine* m_AIStateMachine;
 };

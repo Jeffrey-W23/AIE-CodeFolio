@@ -4,6 +4,7 @@
 #include "Audio.h"
 #include "Grid.h"
 #include "Player.h"
+#include "Enemy.h"
 
 class Application2D : public aie::Application {
 public:
@@ -30,4 +31,5 @@ protected:
 
 	Grid* m_Grid;
 	Player* m_Player;
+	Enemy* m_Enemy;
 };

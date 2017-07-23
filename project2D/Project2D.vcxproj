@@ -95,6 +95,7 @@
     <ClCompile Include="AStar.cpp" />
     <ClCompile Include="Controlled.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Follow.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="BaseAgent.cpp" />
@@ -109,7 +110,6 @@
     <ClCompile Include="ObjectPool.cpp" />
     <ClCompile Include="Patrol.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Seek.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateMachine.cpp" />
     <ClCompile Include="Vector2.cpp" />
@@ -124,6 +124,7 @@
     <ClInclude Include="AStar.h" />
     <ClInclude Include="Controlled.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Follow.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="DynamicArray.h" />
@@ -148,7 +149,6 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
-    <ClInclude Include="Seek.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachine.h" />

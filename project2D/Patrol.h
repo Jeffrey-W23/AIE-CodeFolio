@@ -1,9 +1,8 @@
 #pragma once
 #include "AIState.h"
 #include "Renderer2D.h"
+#include "Follow.h"
 #include "DynamicArray.h"
-#include "IBehaviour.h"
-#include "AIStateMachine.h"
 using namespace aie;
 
 class Patrol : public AIState
@@ -19,4 +18,5 @@ public:
 
 private:
 	DynamicArray<IBehaviour*> m_behaviours;
+	Follow* m_follow;
 };

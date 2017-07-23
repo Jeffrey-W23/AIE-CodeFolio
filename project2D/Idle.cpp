@@ -29,7 +29,7 @@ void Idle::onUpdate(float deltaTime, BaseAgent* agent, AIStateMachine* pMachine)
 	if (m_timer > 3) // What happens if 1 isnt Patrol? What happens if I want to just always be idle.
 	{
 		/*if ()*/
-			pMachine->PushState(1);
+			//pMachine->PushState(1);
 	}
 }
 

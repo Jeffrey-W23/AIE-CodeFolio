@@ -129,13 +129,13 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>AI\CPPs</Filter>
     </ClCompile>
-    <ClCompile Include="Seek.cpp">
-      <Filter>AI\CPPs</Filter>
-    </ClCompile>
     <ClCompile Include="AIStateMachine.cpp">
       <Filter>AI\CPPs</Filter>
     </ClCompile>
     <ClCompile Include="AIState.cpp">
+      <Filter>AI\CPPs</Filter>
+    </ClCompile>
+    <ClCompile Include="Follow.cpp">
       <Filter>AI\CPPs</Filter>
     </ClCompile>
   </ItemGroup>
@@ -248,13 +248,13 @@
     <ClInclude Include="Enemy.h">
       <Filter>AI\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Seek.h">
-      <Filter>AI\Headers</Filter>
-    </ClInclude>
     <ClInclude Include="AIState.h">
       <Filter>AI\Headers</Filter>
     </ClInclude>
     <ClInclude Include="AIStateMachine.h">
+      <Filter>AI\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Follow.h">
       <Filter>AI\Headers</Filter>
     </ClInclude>
   </ItemGroup>

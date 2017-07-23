@@ -1,21 +1,25 @@
 #include "Patrol.h"
+#include "Vector2.h"
+
+class BaseAgent;
 
 Patrol::Patrol()
 {
+	m_follow = new Follow();
+	m_behaviours.PushBack(m_follow);
 }
 
 Patrol::~Patrol()
 {
+	delete m_follow;
 }
 
 void Patrol::onEnter(AIStateMachine* pMachine)
 {
-
 }
 
 void Patrol::onExit(AIStateMachine* pMachine)
 {
-
 }
 
 void Patrol::onUpdate(float deltaTime, BaseAgent* agent, AIStateMachine* pMachine)
@@ -26,5 +30,4 @@ void Patrol::onUpdate(float deltaTime, BaseAgent* agent, AIStateMachine* pMachin
 
 void Patrol::onDraw(Renderer2D* m_2dRenderer)
 {
-
 }
