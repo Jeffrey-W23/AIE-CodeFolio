@@ -1,5 +1,7 @@
 #pragma once
 #include "Renderer2D.h"
+#include "DynamicArray.h"
+#include "IBehaviour.h"
 using namespace aie;
 
 class AIStateMachine;
@@ -54,4 +56,8 @@ public:
 	//		pMachine: a pointer to StateMachine.
 	//--------------------------------------------------------------------------------------
 	virtual void onExit(AIStateMachine* pMachine) = 0;
+
+protected:
+
+	DynamicArray<IBehaviour*> m_behaviours;
 };

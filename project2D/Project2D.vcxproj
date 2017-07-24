@@ -94,6 +94,10 @@
     <ClCompile Include="Application2D.cpp" />
     <ClCompile Include="AStar.cpp" />
     <ClCompile Include="Controlled.cpp" />
+    <ClCompile Include="DecisionButtonPressed.cpp" />
+    <ClCompile Include="DecisionNothingPressed.cpp" />
+    <ClCompile Include="DecisionPrint.cpp" />
+    <ClCompile Include="DecisionTree.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Follow.cpp" />
     <ClCompile Include="Grid.cpp" />
@@ -122,7 +126,13 @@
     <ClInclude Include="Application2D.h" />
     <ClInclude Include="AssociativeArray.h" />
     <ClInclude Include="AStar.h" />
+    <ClInclude Include="BaseDecision.h" />
     <ClInclude Include="Controlled.h" />
+    <ClInclude Include="DecisionButtonPressed.h" />
+    <ClInclude Include="DecisionNothingPressed.h" />
+    <ClInclude Include="DecisionPrint.h" />
+    <ClInclude Include="DecisionQuestion.h" />
+    <ClInclude Include="DecisionTree.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Follow.h" />
     <ClInclude Include="Grid.h" />
@@ -135,6 +145,7 @@
     <ClInclude Include="GraphNode.h" />
     <ClInclude Include="GridNode.h" />
     <ClInclude Include="Heap.h" />
+    <ClInclude Include="Heuristics.h" />
     <ClInclude Include="IBehaviour.h" />
     <ClInclude Include="Idle.h" />
     <ClInclude Include="KeyboardController.h" />

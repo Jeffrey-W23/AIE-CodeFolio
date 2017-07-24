@@ -15,24 +15,27 @@ KeyboardController::~KeyboardController()
 void KeyboardController::Update(BaseAgent* agent, float deltaTime)
 {
 	//Play around with
+	Vector2 pos = agent->GetPosition();
 
 	aie::Input* input = aie::Input::getInstance();
 
 	if (input->isKeyDown(aie::INPUT_KEY_W))
-		agent->m_position.y += +100 * deltaTime;
+		pos.y += 100 * deltaTime;
 		//direction.y += 10;
 
 	if (input->isKeyDown(aie::INPUT_KEY_S))
-		agent->m_position.y -= 100 * deltaTime;
+		pos.y -= 100 * deltaTime;
 			//direction.y -= 10;
 
 	if (input->isKeyDown(aie::INPUT_KEY_D))
-		agent->m_position.x += 100 * deltaTime;
+		pos.x += 100 * deltaTime;
 		//direction.x += 10;
 
 	if (input->isKeyDown(aie::INPUT_KEY_A))
-		agent->m_position.x -= 100 * deltaTime;
+		pos.x -= 100 * deltaTime;
 		//direction.x -= 10;
+
+	agent->SetPosition(pos);
 
 	/*agent->m_force = direction * speed;
 	agent->m_acceleration = agent->m_force / mass;

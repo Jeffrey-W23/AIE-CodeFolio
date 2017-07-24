@@ -2,6 +2,7 @@
 #include "Texture.h"
 #include "Font.h"
 #include "Input.h"
+#include "DecisionTree.h"
 
 Application2D::Application2D() {
 
@@ -22,10 +23,12 @@ bool Application2D::startup() {
 
 	m_audio = new aie::Audio("./audio/powerup.wav");
 
-	m_Grid = new Grid();
+	Grid::create();
 
 	m_Player = new Player();
 	m_Enemy = new Enemy();
+
+	m_DecisionTree = new DecisionTree;
 
 	m_cameraX = -300;
 	m_cameraY = -150;
@@ -40,15 +43,17 @@ void Application2D::shutdown() {
 	delete m_texture;
 	delete m_shipTexture;
 	delete m_2dRenderer;
-	delete m_Grid;
+	Grid::destroy();
 	delete m_Player;
 	delete m_Enemy;
+	delete m_DecisionTree;
 }
 
 void Application2D::update(float deltaTime) 
 {
 	m_Player->Update(deltaTime);
 	m_Enemy->Update(deltaTime);
+	m_DecisionTree->Update(nullptr, deltaTime);
 
 	m_timer += deltaTime;
 
@@ -88,7 +93,7 @@ void Application2D::draw() {
 	// begin drawing sprites
 	m_2dRenderer->begin();
 
-	m_Grid->DrawGrid(m_2dRenderer);
+	Grid::Instance()->DrawGrid(m_2dRenderer);
 
 	m_Player->Draw(m_2dRenderer);
 	m_Enemy->Draw(m_2dRenderer);

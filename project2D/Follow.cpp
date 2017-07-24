@@ -6,164 +6,53 @@
 #include "DynamicArray.h"
 #include "AStar.h"
 #include <math.h>
+#include "Heuristics.h"
 
 struct GridNode;
 using namespace aie;
 
-// Digonal Shortcut Method
-int HeuristicFollow(AStarNode* pNode, AStarNode* pEnd)
+Follow::Follow() // Make grid a singleton
 {
-	int difX = ((GridNode*)pNode)->m_nIndexX - ((GridNode*)pEnd)->m_nIndexX;
-	int difY = ((GridNode*)pNode)->m_nIndexY - ((GridNode*)pEnd)->m_nIndexY;
+	Grid* pGrid = Grid::Instance();
 
-	difX = abs(difX);
-	difY = abs(difY);
-
-	if (difX > difY)
-		return (DIAGNAL_COST * difY) + ADJACENT_COST * (difX - difY);
-	else
-		return (DIAGNAL_COST * difX) + ADJACENT_COST * (difY - difX);
-}
-
-Follow::Follow()
-{
-	m_ppGrid = new GridNode*[GRID_SIZE * GRID_SIZE];
-
-	for (int x = 0; x < GRID_SIZE; ++x)
-	{
-		for (int y = 0; y < GRID_SIZE; ++y)
-		{
-			// Calculate the index 
-			int index = (y * GRID_SIZE) + x;
-
-			Vector2 pos(x * NODE_SIZE, y * NODE_SIZE);
-			m_ppGrid[index] = new GridNode(pos, index, x, y);
-
-			if (x % 3 == 0 && y != 15)
-			{
-				m_ppGrid[index]->m_Blocked = true;
-			}
-		}
-	}
-
-	// connect up adjacent nodes
-	for (int x = 0; x < GRID_SIZE; ++x)
-	{
-		for (int y = 0; y < GRID_SIZE; ++y)
-		{
-			int index = (y * GRID_SIZE) + x;
-			GridNode* currentNode = m_ppGrid[index];
-
-			//Adjacent nodes
-
-			// -------------
-			// |   | 3 |   |
-			// -------------
-			// | 0 | C | 2 |
-			// -------------
-			// |   | 1 |   |
-			// -------------
-			for (int a = 0; a < 4; ++a)
-			{
-				int localx = x;
-				int localy = y;
-
-				if (a % 2 == 0)
-					localx += a - 1;
-				else
-					localy += a - 2;
-
-				if (localx < 0 || localx >= GRID_SIZE)
-					continue;
-
-				if (localy < 0 || localy >= GRID_SIZE)
-					continue;
-
-				int localIndex = (localy * GRID_SIZE) + localx;
-				GridNode* adjNode = m_ppGrid[localIndex];
-
-				// Connect adjacency
-				AStarEdge* pEdge = new AStarEdge();
-				pEdge->m_nEndNode = adjNode;
-				pEdge->m_nCost = ADJACENT_COST;
-
-				currentNode->m_AdjacentList.PushBack(pEdge);
-			}
-
-			// Diagnal nodes
-
-			// -------------
-			// | 1 |   | 2 |
-			// -------------
-			// |   | C |   |
-			// -------------
-			// | 0 |   | 3 |
-			// -------------
-			for (int d = 0; d < 4; ++d)
-			{
-				int localx = x;
-				int localy = y;
-
-				if (d % 2 == 0)
-				{
-					localx += d - 1;
-					localy += d - 1;
-				}
-
-				else
-				{
-					localx += d - 2;
-					localy -= d - 2;
-				}
-
-				if (localx < 0 || localx >= GRID_SIZE)
-					continue;
-
-				if (localy < 0 || localy >= GRID_SIZE)
-					continue;
-
-				int localIndex = (localy * GRID_SIZE) + localx;
-				GridNode* adjNode = m_ppGrid[localIndex];
-
-				// Connect adjacency
-				AStarEdge* pEdge = new AStarEdge();
-				pEdge->m_nEndNode = adjNode;
-				pEdge->m_nCost = DIAGNAL_COST;
-
-				currentNode->m_AdjacentList.PushBack(pEdge);
-			}
-		}
-	}
+	m_pGrid = pGrid;
 
 	// Setup AStar
 	m_pAStar = new AStar(GRID_SIZE * GRID_SIZE);
 
-	// Set Function pointer
-	m_pAStar->SetFunction(&HeuristicFollow);
+	m_pAStar->SetFunction(&Heuristic);
+
+	m_NextNode = 0;
 }
 
 Follow::~Follow()
 {
 	delete m_pAStar;
-
-	for (int i = 0; i < GRID_SIZE * GRID_SIZE; ++i)
-	{
-		delete m_ppGrid[i];
-	}
-
-	delete[]m_ppGrid;
 }
 
 void Follow::Update(BaseAgent* agent, float deltaTime)
 {
-	DynamicArray<AStarNode*> path;
-	m_pAStar->CalculatePath(m_ppGrid[31], m_ppGrid[868], &path);
+	m_path.Clear();
+	m_pAStar->CalculatePath(m_pGrid->GetGrid(1), m_pGrid->GetGrid(88), &m_path);
 
-	for (int i = 0; i < path.Size(); ++i)
+	if (m_NextNode >= m_path.Size())
 	{
-		GridNode* pNode = (GridNode*)path[i];
-		agent->m_position.x = pNode->m_v2Pos.x + 100 * deltaTime;
-		agent->m_position.y = pNode->m_v2Pos.y  + 100 * deltaTime;
+		agent->SetPosition(((GridNode*)m_path[m_path.Size() -1])->m_v2Pos);
+		return;
+	}
+
+	Vector2 dest = ((GridNode*)m_path[m_NextNode])->m_v2Pos;
+	Vector2 dir = dest - agent->GetPosition();
+	dir.normalise();
+	agent->SetPosition(agent->GetPosition() + dir * 80.0 * deltaTime);
+
+	//Check distance and update destination when we get close to node
+	Vector2 dist = dest - agent->GetPosition();
+	float fDist = dist.magnitude();
+
+	if (fDist < 2)
+	{
+		++m_NextNode;
 	}
 }
 

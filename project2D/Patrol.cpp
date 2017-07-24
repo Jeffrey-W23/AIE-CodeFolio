@@ -1,5 +1,6 @@
 #include "Patrol.h"
 #include "Vector2.h"
+#include "BaseAgent.h"
 
 class BaseAgent;
 
@@ -26,6 +27,9 @@ void Patrol::onUpdate(float deltaTime, BaseAgent* agent, AIStateMachine* pMachin
 {
 	for (int i = 0; i < m_behaviours.Size(); ++i)
 		m_behaviours[i]->Update(agent, deltaTime);
+
+	// an array of 4 end nodes
+
 }
 
 void Patrol::onDraw(Renderer2D* m_2dRenderer)

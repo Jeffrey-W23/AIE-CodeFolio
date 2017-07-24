@@ -1,9 +1,7 @@
 #pragma once
 #include "IBehaviour.h"
 #include "AStarNode.h"
-
-struct GridNode;
-class AStar;
+#include "Grid.h"
 
 class Follow : public IBehaviour
 {
@@ -14,7 +12,8 @@ public:
 	void Update(BaseAgent* agent, float deltaTime);
 
 protected:
-	GridNode** m_ppGrid;
+	Grid* m_pGrid;
 	AStar* m_pAStar;
+	DynamicArray<AStarNode*> m_path;
+	int m_NextNode;
 };
-

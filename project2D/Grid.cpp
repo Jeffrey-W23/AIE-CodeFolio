@@ -11,33 +11,7 @@
 struct GridNode;
 using namespace aie;
 
-// Did I put it in the right place, am I doing it right? ASK RICHARD
-int Heuristic(AStarNode* pNode, AStarNode* pEnd)
-{
-	// Make custom Heuristic for higher then credit mark
-
-	// Manhattan Distance (Melbourne Method)
-	/*int difX = ((GridNode*)pNode)->m_nIndexX - ((GridNode*)pEnd)->m_nIndexX;
-	int difY = ((GridNode*)pNode)->m_nIndexY - ((GridNode*)pEnd)->m_nIndexY;
-	
-	return (abs(difX) + abs(difY)) * 10;*/
-	
-	// Digonal Shortcut Method
-	int difX = ((GridNode*)pNode)->m_nIndexX - ((GridNode*)pEnd)->m_nIndexX;
-	int difY = ((GridNode*)pNode)->m_nIndexY - ((GridNode*)pEnd)->m_nIndexY;
-	
-	difX = abs(difX);
-	difY = abs(difY);
-
-	if (difX > difY)
-	{
-		return (DIAGNAL_COST * difY) + ADJACENT_COST * (difX - difY);
-	}
-	else
-	{
-		return (DIAGNAL_COST * difX) + ADJACENT_COST * (difY - difX);
-	}
-}
+Grid* Grid::m_instance = nullptr;
 
 Grid::Grid()
 {
@@ -53,7 +27,7 @@ Grid::Grid()
 			Vector2 pos(x * NODE_SIZE, y * NODE_SIZE);
 			m_ppGrid[index] = new GridNode(pos, index, x, y);
 
-			if (x % 3 == 0 && y != 15)
+			if (x % 3 == 0 && y != 5)
 			{
 				m_ppGrid[index]->m_Blocked = true;
 			}
@@ -150,16 +124,16 @@ Grid::Grid()
 	}
 
 	// Setup AStar
-	m_pAStar = new AStar(GRID_SIZE * GRID_SIZE);
+	//m_pAStar = new AStar(GRID_SIZE * GRID_SIZE);
 
 	// Set Function pointer
-	m_pAStar->SetFunction(&Heuristic);
+	//m_pAStar->SetFunction(&Heuristic);
 }
 
 
 Grid::~Grid()
 {
-	delete m_pAStar;
+	//delete m_pAStar;
 
 	for (int i = 0; i < GRID_SIZE * GRID_SIZE; ++i)
 	{
@@ -167,6 +141,11 @@ Grid::~Grid()
 	}
 
 	delete[]m_ppGrid;
+}
+
+Grid* Grid::Instance()
+{
+	return m_instance;
 }
 
 void Grid::DrawGrid(Renderer2D* m_2dRenderer)
@@ -198,14 +177,19 @@ void Grid::DrawGrid(Renderer2D* m_2dRenderer)
 	}
 
 	// Draw Path
-	DynamicArray<AStarNode*> path;
+	/*DynamicArray<AStarNode*> path;
 	m_pAStar->CalculatePath(m_ppGrid[31], m_ppGrid[868], &path);
 
-	/*for (int i = 0; i < path.Size(); ++i)
+	for (int i = 0; i < path.Size(); ++i)
 	{
 		GridNode* pNode = (GridNode*)path[i];
 		m_2dRenderer->setRenderColour(0x00FF00FF);
 		m_2dRenderer->drawBox(pNode->m_v2Pos.x, pNode->m_v2Pos.y, NODE_SIZE / 2, NODE_SIZE / 2);
 		m_2dRenderer->setRenderColour(0xFFFFFFFF);
 	}*/
+}
+
+GridNode* Grid::GetGrid(int nIndex)
+{
+	return m_ppGrid[nIndex];
 }

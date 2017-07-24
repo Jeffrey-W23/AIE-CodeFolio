@@ -9,7 +9,4 @@ public:
 
 	void Update(float deltaTime);
 	void Draw(Renderer2D* m_2dRenderer);
-
-private:
-	AIStateMachine* m_AIStateMachine;
 };

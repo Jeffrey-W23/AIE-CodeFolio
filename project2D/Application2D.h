@@ -6,6 +6,8 @@
 #include "Player.h"
 #include "Enemy.h"
 
+class DecisionTree;
+
 class Application2D : public aie::Application {
 public:
 
@@ -29,7 +31,8 @@ protected:
 	float m_cameraX, m_cameraY;
 	float m_timer;
 
-	Grid* m_Grid;
+	//Grid* m_Grid;
 	Player* m_Player;
 	Enemy* m_Enemy;
+	DecisionTree* m_DecisionTree;
 };
