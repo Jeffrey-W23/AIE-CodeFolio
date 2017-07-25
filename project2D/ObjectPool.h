@@ -1,6 +1,9 @@
 //#include, using etc
 #pragma once
-#include "Entity.h"
+#include "Renderer2D.h"
+using namespace aie;
+
+class Entity;
 
 //--------------------------------------------------------------------------------------
 // ObjectPool object.
@@ -41,7 +44,7 @@ public:
 	// Param:
 	//		deltaTime: Pass in deltaTime. A number that updates per second.
 	//--------------------------------------------------------------------------------------
-	void Update();
+	void Update(float deltaTime);
 
 	//--------------------------------------------------------------------------------------
 	// Draw: A function to render (or "draw") objects to the screen.
@@ -49,7 +52,7 @@ public:
 	// Param:
 	//		renderer2D: a pointer to Renderer2D for rendering objects to screen.
 	//--------------------------------------------------------------------------------------
-	void Draw();
+	void Draw(Renderer2D* m_2dRenderer);
 
 private:
 

@@ -1,7 +1,7 @@
 #pragma once
-#include "BaseAgent.h"
+#include "Entity.h"
 
-class Player : public BaseAgent
+class Player : public Entity
 {
 public:
 	Player();

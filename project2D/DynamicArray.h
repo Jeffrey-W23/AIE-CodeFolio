@@ -47,7 +47,7 @@ public:
 		m_nUsed = other.m_nUsed;
 
 		m_pData = new T[other.m_nCapacity];
-		memccpy(m_pData, other.m_pData, sizeof(T) * other.m_nCapacity);
+		memcpy(m_pData, other.m_pData, sizeof(T) * other.m_nCapacity);
 	}
 
 	//--------------------------------------------------------------------------------------

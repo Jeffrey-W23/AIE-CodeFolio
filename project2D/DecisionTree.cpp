@@ -19,7 +19,7 @@ DecisionTree::~DecisionTree()
 	delete m_pRoot;
 }
 
-void DecisionTree::Update(BaseAgent* pAgent, float deltaTime)
+void DecisionTree::Update(Entity* pEntity, float deltaTime)
 {
-	m_pRoot->MakeDecision(pAgent, deltaTime);
+	m_pRoot->MakeDecision(pEntity, deltaTime);
 }

@@ -32,7 +32,7 @@ AIStateMachine::~AIStateMachine()
 // Param:
 //		deltaTime: Pass in deltaTime. A number that updates per second.
 //--------------------------------------------------------------------------------------
-void AIStateMachine::Update(float deltaTime, BaseAgent* agent)
+void AIStateMachine::Update(float deltaTime, Entity* pEntity)
 {
 	_ASSERT(m_CurrentStack.Size() > 0);
 	if (m_CurrentStack.Size() <= 0)
@@ -42,7 +42,7 @@ void AIStateMachine::Update(float deltaTime, BaseAgent* agent)
 	/*if (backUpdate)
 	m_CurrentStack.SecondLast()->onUpdate(deltaTime, this);*/
 
-	m_CurrentStack.Top()->onUpdate(deltaTime, agent, this);
+	m_CurrentStack.Top()->onUpdate(deltaTime, pEntity, this);
 }
 
 //--------------------------------------------------------------------------------------

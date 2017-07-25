@@ -3,6 +3,8 @@
 #include "Font.h"
 #include "Input.h"
 #include "DecisionTree.h"
+#include "AIBehaviourTree.h"
+#include "CollisionManager.h"
 
 Application2D::Application2D() {
 
@@ -25,10 +27,15 @@ bool Application2D::startup() {
 
 	Grid::create();
 
+	// Create instance for the collision manger
+	CollisionManager::Create();
+
 	m_Player = new Player();
 	m_Enemy = new Enemy();
 
 	m_DecisionTree = new DecisionTree;
+
+	m_BehaviourTree = new AIBehaviourTree();
 
 	m_cameraX = -300;
 	m_cameraY = -150;
@@ -44,9 +51,14 @@ void Application2D::shutdown() {
 	delete m_shipTexture;
 	delete m_2dRenderer;
 	Grid::destroy();
+
+	// Call the collision destroy fucntion to delete all bounding boxes.
+	CollisionManager::Destory();
+
 	delete m_Player;
 	delete m_Enemy;
 	delete m_DecisionTree;
+	delete m_BehaviourTree;
 }
 
 void Application2D::update(float deltaTime) 
@@ -54,7 +66,7 @@ void Application2D::update(float deltaTime)
 	m_Player->Update(deltaTime);
 	m_Enemy->Update(deltaTime);
 	m_DecisionTree->Update(nullptr, deltaTime);
-
+	m_BehaviourTree->Update(deltaTime);
 	m_timer += deltaTime;
 
 	// input example

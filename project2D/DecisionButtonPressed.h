@@ -6,6 +6,6 @@ class DecisionButtonPressed : public DecisionQuestion
 public:
 	DecisionButtonPressed();
 	virtual ~DecisionButtonPressed();
-	void MakeDecision(BaseAgent* pAgent, float deltaTime);
+	void MakeDecision(Entity* pEntity, float deltaTime);
 
 };

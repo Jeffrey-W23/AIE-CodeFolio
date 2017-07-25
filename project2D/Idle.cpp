@@ -20,10 +20,10 @@ void Idle::onExit(AIStateMachine* pMachine)
 	m_timer = 0;
 }
 
-void Idle::onUpdate(float deltaTime, BaseAgent* agent, AIStateMachine* pMachine)
+void Idle::onUpdate(float deltaTime, Entity* pEntity, AIStateMachine* pMachine)
 {
 	for (int i = 0; i < m_behaviours.Size(); ++i)
-		m_behaviours[i]->Update(agent, deltaTime);
+		m_behaviours[i]->Update(pEntity, deltaTime);
 
 	m_timer += deltaTime;
 

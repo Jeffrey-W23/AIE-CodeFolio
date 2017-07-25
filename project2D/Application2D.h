@@ -6,6 +6,7 @@
 #include "Player.h"
 #include "Enemy.h"
 
+class AIBehaviourTree;
 class DecisionTree;
 
 class Application2D : public aie::Application {
@@ -35,4 +36,5 @@ protected:
 	Player* m_Player;
 	Enemy* m_Enemy;
 	DecisionTree* m_DecisionTree;
+	AIBehaviourTree* m_BehaviourTree;
 };

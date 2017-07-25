@@ -11,7 +11,7 @@ DecisionPrint::~DecisionPrint()
 {
 }
 
-void DecisionPrint::MakeDecision(BaseAgent* pAgent, float deltaTime)
+void DecisionPrint::MakeDecision(Entity* pEntity, float deltaTime)
 {
 	m_timer += deltaTime;
 

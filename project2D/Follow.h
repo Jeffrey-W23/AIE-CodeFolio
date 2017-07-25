@@ -9,7 +9,7 @@ public:
 	Follow();
 	~Follow();
 
-	void Update(BaseAgent* agent, float deltaTime);
+	void Update(Entity* pEntity, float deltaTime);
 
 protected:
 	Grid* m_pGrid;

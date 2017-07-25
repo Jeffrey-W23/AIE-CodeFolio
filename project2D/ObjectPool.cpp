@@ -1,5 +1,6 @@
 //#include, using etc
 #include "ObjectPool.h"
+#include "Entity.h"
 #include <crtdbg.h>
 
 //--------------------------------------------------------------------------------------
@@ -71,13 +72,13 @@ void ObjectPool::Deallocate(Entity* object)
 // Param:
 //		deltaTime: Pass in deltaTime. A number that updates per second.
 //--------------------------------------------------------------------------------------
-void ObjectPool::Update()
+void ObjectPool::Update(float deltaTime)
 {
 	for (int i = 0; i < m_nMaxSize; ++i)
 	{
 		if (m_pPool[i]->GetActive())
 		{
-			m_pPool[i]->Update();
+			m_pPool[i]->Update(deltaTime);
 		}
 	}
 }
@@ -88,13 +89,13 @@ void ObjectPool::Update()
 // Param:
 //		renderer2D: a pointer to Renderer2D for rendering objects to screen.
 //--------------------------------------------------------------------------------------
-void ObjectPool::Draw()
+void ObjectPool::Draw(Renderer2D* m_2dRenderer)
 {
 	for (int i = 0; i < m_nMaxSize; ++i)
 	{
 		if (m_pPool[i]->GetActive())
 		{
-			m_pPool[i]->Draw();
+			m_pPool[i]->Draw(m_2dRenderer);
 		}
 	}
 }

@@ -28,234 +28,351 @@
     <Filter Include="Other">
       <UniqueIdentifier>{a30271ea-b6f3-4fa5-a121-83ca9506b454}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Containers\Headers">
+      <UniqueIdentifier>{a45297eb-a0a6-44ba-ab06-c85af4805976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Containers\Sources">
+      <UniqueIdentifier>{8cb1d3c7-f993-4879-8d5c-f50d1428391d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Design Patterns\Headers">
+      <UniqueIdentifier>{74372238-d95e-41ff-bfa3-9bc768d6f5d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Design Patterns\Sources">
+      <UniqueIdentifier>{422ed4ea-5250-4c7d-9905-081cc7b11e9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math Library\Headers">
+      <UniqueIdentifier>{b88023e1-fba1-4dfb-902e-2d2b37796832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math Library\Sources">
+      <UniqueIdentifier>{9c1696dd-60cc-4977-951b-4399447d2e03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Other\Headers">
+      <UniqueIdentifier>{77ef1a79-cf55-44d7-b57b-c947a0a9c33a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Other\Sources">
+      <UniqueIdentifier>{2b7b8360-60b8-45ec-ae33-d10a98832a84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collision Detection">
+      <UniqueIdentifier>{79aca1d0-15c7-4aeb-835c-3d7c623827bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collision Detection\Headers">
+      <UniqueIdentifier>{c3320a32-157f-4573-9c81-10675f552e17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collision Detection\Sources">
+      <UniqueIdentifier>{df5142cd-5743-45f2-b350-9c3880885c74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\State Machine">
+      <UniqueIdentifier>{43352ddf-3061-4bb2-9125-acf54069af38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Behaviour Tree">
+      <UniqueIdentifier>{c6678e60-71e4-459e-a1ef-bddb87da1184}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Decision Tree">
+      <UniqueIdentifier>{2aadb57c-1285-4827-a829-8e57e68e58cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\AStar">
+      <UniqueIdentifier>{626af7a8-e8fc-49b3-a598-c8bb0c2a582e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Behaviours">
+      <UniqueIdentifier>{e793b169-cd69-4a91-94a3-27400014ee4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Behaviour Tree\Headers">
+      <UniqueIdentifier>{315b309c-0fea-4b20-a253-c2cab7683e36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Behaviour Tree\Sources">
+      <UniqueIdentifier>{3b20b3d2-7441-4ab0-8c3c-19eadfd79caa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Decision Tree\Sources">
+      <UniqueIdentifier>{c892f010-4fdf-4cef-8135-c4cca9cea2ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Decision Tree\Headers">
+      <UniqueIdentifier>{07782d4c-ce30-4319-b778-576f9d639af9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\AStar\Headers">
+      <UniqueIdentifier>{b2a127fd-fc32-43a5-82dd-2aa1cdb50b08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\AStar\Sources">
+      <UniqueIdentifier>{599baff3-4e2a-400b-9efb-113c52f3032b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Behaviours\Headers">
+      <UniqueIdentifier>{8d839214-bae9-4b07-8c79-3e0fad9bc47e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Behaviours\Sources">
+      <UniqueIdentifier>{a0d6cdb2-204b-4637-b59b-d21ec3354f24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\State Machine\Headers">
+      <UniqueIdentifier>{19e041fe-1f73-43f3-a856-65649011d52f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\State Machine\Sources">
+      <UniqueIdentifier>{ae534753-8dee-4157-bd57-738fe225e51f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Application2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AIState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AIStateMachine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AStar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BaseAgent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Controlled.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DecisionButtonPressed.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DecisionNothingPressed.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DecisionPrint.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DecisionTree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Follow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FunctionPointerExampleClass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Grid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="IBehaviour.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Idle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyboardController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Matrix2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Matrix3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Matrix4.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ObjectPool.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Patrol.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Design Patterns\Sources</Filter>
     </ClCompile>
     <ClCompile Include="State.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Design Patterns\Sources</Filter>
     </ClCompile>
     <ClCompile Include="StateMachine.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Design Patterns\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix2.cpp">
+      <Filter>Math Library\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix3.cpp">
+      <Filter>Math Library\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix4.cpp">
+      <Filter>Math Library\Sources</Filter>
     </ClCompile>
     <ClCompile Include="Vector2.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Math Library\Sources</Filter>
     </ClCompile>
     <ClCompile Include="Vector3.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Math Library\Sources</Filter>
     </ClCompile>
     <ClCompile Include="Vector4.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Math Library\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Application2D.cpp">
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="FunctionPointerExampleClass.cpp">
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>Collision Detection\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="rect.cpp">
+      <Filter>Collision Detection\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="AIBehaviourTree.cpp">
+      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DecisionButtonPressed.cpp">
+      <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DecisionNothingPressed.cpp">
+      <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DecisionPrint.cpp">
+      <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DecisionTree.cpp">
+      <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="AStar.cpp">
+      <Filter>Artificial Intelligence\AStar\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Artificial Intelligence\AStar\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Follow.cpp">
+      <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="IBehaviour.cpp">
+      <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardController.cpp">
+      <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="AIState.cpp">
+      <Filter>Artificial Intelligence\State Machine\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateMachine.cpp">
+      <Filter>Artificial Intelligence\State Machine\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Controlled.cpp">
+      <Filter>Artificial Intelligence\State Machine\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Idle.cpp">
+      <Filter>Artificial Intelligence\State Machine\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Patrol.cpp">
+      <Filter>Artificial Intelligence\State Machine\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseAgent.cpp">
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Other\Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Application2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AIState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AIStateMachine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AssociativeArray.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AStar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AStarNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseAgent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseDecision.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Controlled.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DecisionButtonPressed.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DecisionNothingPressed.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DecisionPrint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DecisionQuestion.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DecisionTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Defines.h">
-      <Filter>Header Files</Filter>
+      <Filter>Containers\Headers</Filter>
     </ClInclude>
     <ClInclude Include="DynamicArray.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Follow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FunctionPointerExampleClass.h">
-      <Filter>Header Files</Filter>
+      <Filter>Containers\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Graph.h">
-      <Filter>Header Files</Filter>
+      <Filter>Containers\Headers</Filter>
     </ClInclude>
     <ClInclude Include="GraphNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Grid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GridNode.h">
-      <Filter>Header Files</Filter>
+      <Filter>Containers\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Heap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Heuristics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IBehaviour.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Idle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyboardController.h">
-      <Filter>Header Files</Filter>
+      <Filter>Containers\Headers</Filter>
     </ClInclude>
     <ClInclude Include="LinkedLists.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix4.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjectPool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Patrol.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
+      <Filter>Containers\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>Header Files</Filter>
+      <Filter>Containers\Headers</Filter>
     </ClInclude>
     <ClInclude Include="ResourceManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Containers\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Stack.h">
-      <Filter>Header Files</Filter>
+      <Filter>Containers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectPool.h">
+      <Filter>Design Patterns\Headers</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
-      <Filter>Header Files</Filter>
+      <Filter>Design Patterns\Headers</Filter>
     </ClInclude>
     <ClInclude Include="StateMachine.h">
-      <Filter>Header Files</Filter>
+      <Filter>Design Patterns\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix2.h">
+      <Filter>Math Library\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix3.h">
+      <Filter>Math Library\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix4.h">
+      <Filter>Math Library\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Vector2.h">
-      <Filter>Header Files</Filter>
+      <Filter>Math Library\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Vector3.h">
-      <Filter>Header Files</Filter>
+      <Filter>Math Library\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Vector4.h">
-      <Filter>Header Files</Filter>
+      <Filter>Math Library\Headers</Filter>
     </ClInclude>
     <ClInclude Include="VectorCast.h">
-      <Filter>Header Files</Filter>
+      <Filter>Math Library\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Application2D.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionPointerExampleClass.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>Collision Detection\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="rect.h">
+      <Filter>Collision Detection\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Collision Detection\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AIBehaviourTree.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BehaviourNode.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Composite.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ExampleAction.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ExampleQuestion.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Selector.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDecision.h">
+      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DecisionButtonPressed.h">
+      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DecisionNothingPressed.h">
+      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DecisionPrint.h">
+      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DecisionQuestion.h">
+      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DecisionTree.h">
+      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AStar.h">
+      <Filter>Artificial Intelligence\AStar\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AStarNode.h">
+      <Filter>Artificial Intelligence\AStar\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Artificial Intelligence\AStar\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GridNode.h">
+      <Filter>Artificial Intelligence\AStar\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Heuristics.h">
+      <Filter>Artificial Intelligence\AStar\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Follow.h">
+      <Filter>Artificial Intelligence\Behaviours\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="IBehaviour.h">
+      <Filter>Artificial Intelligence\Behaviours\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardController.h">
+      <Filter>Artificial Intelligence\Behaviours\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AIState.h">
+      <Filter>Artificial Intelligence\State Machine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateMachine.h">
+      <Filter>Artificial Intelligence\State Machine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Controlled.h">
+      <Filter>Artificial Intelligence\State Machine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Idle.h">
+      <Filter>Artificial Intelligence\State Machine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Patrol.h">
+      <Filter>Artificial Intelligence\State Machine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseAgent.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Other\Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

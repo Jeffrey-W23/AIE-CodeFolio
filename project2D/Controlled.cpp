@@ -23,10 +23,10 @@ void Controlled::onExit(AIStateMachine* pMachine)
 {
 }
 
-void Controlled::onUpdate(float deltaTime, BaseAgent* agent, AIStateMachine* pMachine)
+void Controlled::onUpdate(float deltaTime, Entity* pEntity, AIStateMachine* pMachine)
 {
 	for (int i = 0; i < m_behaviours.Size(); ++i)
-		m_behaviours[i]->Update(agent, deltaTime);
+		m_behaviours[i]->Update(pEntity, deltaTime);
 }
 
 void Controlled::onDraw(Renderer2D* m_2dRenderer)

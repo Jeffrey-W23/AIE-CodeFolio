@@ -7,7 +7,7 @@ public:
 	DecisionPrint();
 	~DecisionPrint();
 
-	void MakeDecision(BaseAgent* pAgent, float deltaTime);
+	void MakeDecision(Entity* pEntity, float deltaTime);
 
 private:
 	float m_timer;

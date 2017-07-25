@@ -10,14 +10,14 @@ DecisionButtonPressed::~DecisionButtonPressed()
 {
 }
 
-void DecisionButtonPressed::MakeDecision(BaseAgent* pAgent, float deltaTime)
+void DecisionButtonPressed::MakeDecision(Entity* pEntity, float deltaTime)
 {
 	if (Input::getInstance()->isKeyDown(INPUT_KEY_SPACE))
 	{
-		m_pTrueDecision->MakeDecision(pAgent, deltaTime);
+		m_pTrueDecision->MakeDecision(pEntity, deltaTime);
 	}
 	else
 	{
-		m_pFalseDecision->MakeDecision(pAgent, deltaTime);
+		m_pFalseDecision->MakeDecision(pEntity, deltaTime);
 	}
 }

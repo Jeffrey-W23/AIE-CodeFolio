@@ -8,7 +8,7 @@ public:
 	KeyboardController();
 	~KeyboardController();
 
-	void Update(BaseAgent* agent, float deltaTime);
+	void Update(Entity* pEntity, float deltaTime);
 
 protected:
 

@@ -1,8 +1,13 @@
 #include "Player.h"
 #include "Controlled.h"
+#include "CollisionManager.h"
 
 Player::Player()
 {
+	// Create a collidable object for walls.
+	CollisionManager* collider = CollisionManager::GetInstance();
+	collider->AddObject(this);
+
 	m_AIStateMachine->AddState(0, new Controlled());
 	m_AIStateMachine->PushState(0);
 
@@ -10,6 +15,9 @@ Player::Player()
 	m_acceleration = Vector2(0,0);
 	m_velocity = Vector2(0,0);
 	m_position = Vector2(0, 0);
+
+	// Set the type of object to wall
+	this->SetType(PLAYER);
 }
 
 Player::~Player()
@@ -25,5 +33,5 @@ void Player::Draw(Renderer2D* m_2dRenderer)
 {
 	m_AIStateMachine->Draw(m_2dRenderer);
 
-	m_2dRenderer->drawBox(m_position.x, m_position.y, 20, 20);
+	m_2dRenderer->drawSpriteTransformed3x3(nullptr, GlobalTrasform, 20, 20);
 }

@@ -23,10 +23,10 @@ void Patrol::onExit(AIStateMachine* pMachine)
 {
 }
 
-void Patrol::onUpdate(float deltaTime, BaseAgent* agent, AIStateMachine* pMachine)
+void Patrol::onUpdate(float deltaTime, Entity* pEntity, AIStateMachine* pMachine)
 {
 	for (int i = 0; i < m_behaviours.Size(); ++i)
-		m_behaviours[i]->Update(agent, deltaTime);
+		m_behaviours[i]->Update(pEntity, deltaTime);
 
 	// an array of 4 end nodes
 

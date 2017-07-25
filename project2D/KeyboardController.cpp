@@ -1,5 +1,5 @@
 #include "KeyboardController.h"
-#include "BaseAgent.h"
+#include "Entity.h"
 #include "Input.h"
 
 KeyboardController::KeyboardController()
@@ -12,10 +12,10 @@ KeyboardController::~KeyboardController()
 {
 }
 
-void KeyboardController::Update(BaseAgent* agent, float deltaTime)
+void KeyboardController::Update(Entity* pEntity, float deltaTime)
 {
 	//Play around with
-	Vector2 pos = agent->GetPosition();
+	Vector2 pos = pEntity->GetPosition();
 
 	aie::Input* input = aie::Input::getInstance();
 
@@ -35,7 +35,7 @@ void KeyboardController::Update(BaseAgent* agent, float deltaTime)
 		pos.x -= 100 * deltaTime;
 		//direction.x -= 10;
 
-	agent->SetPosition(pos);
+	pEntity->SetPosition(pos);
 
 	/*agent->m_force = direction * speed;
 	agent->m_acceleration = agent->m_force / mass;

@@ -7,6 +7,6 @@ public:
 	DecisionNothingPressed();
 	virtual ~DecisionNothingPressed();
 
-	void MakeDecision(BaseAgent* pAgent, float deltaTime);
+	void MakeDecision(Entity* pEntity, float deltaTime);
 };
 

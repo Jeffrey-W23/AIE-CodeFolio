@@ -10,7 +10,7 @@ DecisionNothingPressed::~DecisionNothingPressed()
 {
 }
 
-void DecisionNothingPressed::MakeDecision(BaseAgent* pAgent, float deltaTime)
+void DecisionNothingPressed::MakeDecision(Entity* pEntity, float deltaTime)
 {
 	system("cls");
 

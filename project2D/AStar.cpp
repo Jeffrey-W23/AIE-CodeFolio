@@ -108,6 +108,9 @@ bool AStar::CalculatePath(AStarNode* pStart, AStarNode* pEnd, DynamicArray<AStar
 
 					// Update Prev Node.
 					pNeighbour->m_nPrev = pCurrentNode;
+
+					// Sort Heap
+
 				}
 			}
 

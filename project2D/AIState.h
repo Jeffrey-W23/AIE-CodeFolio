@@ -5,7 +5,7 @@
 using namespace aie;
 
 class AIStateMachine;
-class BaseAgent;
+class Entity;
 
 //--------------------------------------------------------------------------------------
 // State object. Inheritance from State.
@@ -39,7 +39,7 @@ public:
 	//		deltaTime: Pass in deltaTime. A number that updates per second.
 	//		pMachine: a pointer to StateMachine.
 	//--------------------------------------------------------------------------------------
-	virtual void onUpdate(float deltaTime, BaseAgent* agent, AIStateMachine* pMachine) = 0;
+	virtual void onUpdate(float deltaTime, Entity* pEntity, AIStateMachine* pMachine) = 0;
 
 	//--------------------------------------------------------------------------------------
 	// onDraw: A virtual function to render (or "draw") objects to the screen.

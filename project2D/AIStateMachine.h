@@ -29,7 +29,7 @@ public:
 	// Param:
 	//		deltaTime: Pass in deltaTime. A number that updates per second.
 	//--------------------------------------------------------------------------------------
-	void Update(float deltaTime, BaseAgent* agent);
+	void Update(float deltaTime, Entity* pEntity);
 
 	//--------------------------------------------------------------------------------------
 	// Draw: A function to render (or "draw") states to the screen.
