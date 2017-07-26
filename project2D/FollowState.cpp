@@ -6,7 +6,7 @@ class Entity;
 
 FollowState::FollowState()
 {
-	//m_behaviours.PushBack(new Follow(1.0f)); // Memory leak?
+	m_behaviours.PushBack(new Follow(1.0f));
 }
 
 FollowState::~FollowState()

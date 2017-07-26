@@ -8,8 +8,8 @@ class Entity;
 
 MoveState::MoveState()
 {
-	//m_behaviours.PushBack(new Flee(0.5f)); // Memory leak?
-	//m_behaviours.PushBack(new Seek(1.0f)); // Memory leak?
+	m_behaviours.PushBack(new Flee(0.5f));
+	m_behaviours.PushBack(new Seek(1.0f));
 }
 
 MoveState::~MoveState()

@@ -6,7 +6,7 @@
 
 ControllerState::ControllerState()
 {
-	//m_behaviours.PushBack(new KeyboardController(1.0f)); //memory leak??
+	m_behaviours.PushBack(new KeyboardController(1.0f));
 }
 
 ControllerState::~ControllerState()

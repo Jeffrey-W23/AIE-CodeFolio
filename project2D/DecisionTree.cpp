@@ -9,7 +9,6 @@ DecisionTree::DecisionTree()
 
 	m_pRoot->m_pTrueDecision = new DecisionPrint();
 	m_pRoot->m_pFalseDecision = new DecisionNothingPressed();
-
 }
 
 DecisionTree::~DecisionTree()

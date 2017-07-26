@@ -12,7 +12,7 @@ public:
 		m_fWeighting = fWeighting;
 	}
 
-	~IBehaviour(){}
+	virtual ~IBehaviour(){}
 
 	virtual Vector2 Update(Entity* pEntity, float deltaTime) = 0;
 	

@@ -111,6 +111,7 @@ bool AStar::CalculatePath(AStarNode* pStart, AStarNode* pEnd, DynamicArray<AStar
 
 					// Sort Heap
 
+
 				}
 			}
 
