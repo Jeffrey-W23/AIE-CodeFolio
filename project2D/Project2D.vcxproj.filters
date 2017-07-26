@@ -177,9 +177,6 @@
     <ClCompile Include="Follow.cpp">
       <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="IBehaviour.cpp">
-      <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
-    </ClCompile>
     <ClCompile Include="KeyboardController.cpp">
       <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
     </ClCompile>
@@ -189,23 +186,32 @@
     <ClCompile Include="AIStateMachine.cpp">
       <Filter>Artificial Intelligence\State Machine\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Controlled.cpp">
-      <Filter>Artificial Intelligence\State Machine\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Idle.cpp">
-      <Filter>Artificial Intelligence\State Machine\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Patrol.cpp">
-      <Filter>Artificial Intelligence\State Machine\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="BaseAgent.cpp">
-      <Filter>Other\Sources</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>Other\Sources</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy1.cpp">
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="FollowState.cpp">
+      <Filter>Artificial Intelligence\State Machine\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Flee.cpp">
+      <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Seek.cpp">
+      <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveState.cpp">
+      <Filter>Artificial Intelligence\State Machine\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="IdleState.cpp">
+      <Filter>Artificial Intelligence\State Machine\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ControllerState.cpp">
+      <Filter>Artificial Intelligence\State Machine\Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -356,23 +362,32 @@
     <ClInclude Include="AIStateMachine.h">
       <Filter>Artificial Intelligence\State Machine\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Controlled.h">
-      <Filter>Artificial Intelligence\State Machine\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Idle.h">
-      <Filter>Artificial Intelligence\State Machine\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Patrol.h">
-      <Filter>Artificial Intelligence\State Machine\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseAgent.h">
-      <Filter>Other\Headers</Filter>
-    </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Other\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy1.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FollowState.h">
+      <Filter>Artificial Intelligence\State Machine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Flee.h">
+      <Filter>Artificial Intelligence\Behaviours\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Seek.h">
+      <Filter>Artificial Intelligence\Behaviours\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveState.h">
+      <Filter>Artificial Intelligence\State Machine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllerState.h">
+      <Filter>Artificial Intelligence\State Machine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="IdleState.h">
+      <Filter>Artificial Intelligence\State Machine\Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

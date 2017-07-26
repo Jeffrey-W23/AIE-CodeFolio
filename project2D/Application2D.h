@@ -5,6 +5,7 @@
 #include "Grid.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Enemy1.h"
 
 class AIBehaviourTree;
 class DecisionTree;
@@ -32,9 +33,9 @@ protected:
 	float m_cameraX, m_cameraY;
 	float m_timer;
 
-	//Grid* m_Grid;
 	Player* m_Player;
 	Enemy* m_Enemy;
+	Enemy1* m_Enemy1;
 	DecisionTree* m_DecisionTree;
 	AIBehaviourTree* m_BehaviourTree;
 };

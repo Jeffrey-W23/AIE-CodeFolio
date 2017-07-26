@@ -32,6 +32,7 @@ bool Application2D::startup() {
 
 	m_Player = new Player();
 	m_Enemy = new Enemy();
+	m_Enemy1 = new Enemy1();
 
 	m_DecisionTree = new DecisionTree;
 
@@ -57,6 +58,7 @@ void Application2D::shutdown() {
 
 	delete m_Player;
 	delete m_Enemy;
+	delete m_Enemy1;
 	delete m_DecisionTree;
 	delete m_BehaviourTree;
 }
@@ -65,6 +67,7 @@ void Application2D::update(float deltaTime)
 {
 	m_Player->Update(deltaTime);
 	m_Enemy->Update(deltaTime);
+	m_Enemy1->Update(deltaTime);
 	m_DecisionTree->Update(nullptr, deltaTime);
 	m_BehaviourTree->Update(deltaTime);
 	m_timer += deltaTime;
@@ -109,6 +112,7 @@ void Application2D::draw() {
 
 	m_Player->Draw(m_2dRenderer);
 	m_Enemy->Draw(m_2dRenderer);
+	m_Enemy1->Draw(m_2dRenderer);
 
 	//// demonstrate animation
 	//m_2dRenderer->setUVRect(int(m_timer) % 8 / 8.0f, 0, 1.f / 8, 1.f / 8);

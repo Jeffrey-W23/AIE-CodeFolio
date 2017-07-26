@@ -2,7 +2,7 @@
 #include "Entity.h"
 #include "Input.h"
 
-KeyboardController::KeyboardController()
+KeyboardController::KeyboardController(float fWeighting) : IBehaviour(fWeighting)
 {
 	speed = 20.0f;
 	mass = 5.0f;
@@ -12,7 +12,7 @@ KeyboardController::~KeyboardController()
 {
 }
 
-void KeyboardController::Update(Entity* pEntity, float deltaTime)
+Vector2 KeyboardController::Update(Entity* pEntity, float deltaTime)
 {
 	//Play around with
 	Vector2 pos = pEntity->GetPosition();
@@ -41,4 +41,5 @@ void KeyboardController::Update(Entity* pEntity, float deltaTime)
 	agent->m_acceleration = agent->m_force / mass;
 	agent->m_velocity += agent->m_acceleration * deltaTime;
 	agent->m_position += agent->m_velocity * deltaTime;*/
+	return Vector2(0, 0);
 }

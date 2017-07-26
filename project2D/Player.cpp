@@ -1,5 +1,5 @@
 #include "Player.h"
-#include "Controlled.h"
+#include "ControllerState.h"
 #include "CollisionManager.h"
 
 Player::Player()
@@ -8,7 +8,7 @@ Player::Player()
 	CollisionManager* collider = CollisionManager::GetInstance();
 	collider->AddObject(this);
 
-	m_AIStateMachine->AddState(0, new Controlled());
+	m_AIStateMachine->AddState(0, new ControllerState());
 	m_AIStateMachine->PushState(0);
 
 	m_force = Vector2(10,10);

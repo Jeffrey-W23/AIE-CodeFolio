@@ -6,10 +6,10 @@
 class Follow : public IBehaviour
 {
 public:
-	Follow();
+	Follow(float fWeighting);
 	~Follow();
 
-	void Update(Entity* pEntity, float deltaTime);
+	Vector2 Update(Entity* pEntity, float deltaTime);
 
 protected:
 	Grid* m_pGrid;

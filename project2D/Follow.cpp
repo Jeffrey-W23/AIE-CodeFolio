@@ -11,7 +11,7 @@
 struct GridNode;
 using namespace aie;
 
-Follow::Follow() // Make grid a singleton
+Follow::Follow(float fWeighting) : IBehaviour(fWeighting)
 {
 	Grid* pGrid = Grid::Instance();
 
@@ -30,7 +30,7 @@ Follow::~Follow()
 	delete m_pAStar;
 }
 
-void Follow::Update(Entity* pEntity, float deltaTime)
+Vector2 Follow::Update(Entity* pEntity, float deltaTime)
 {
 	m_path.Clear();
 	m_pAStar->CalculatePath(m_pGrid->GetGrid(1), m_pGrid->GetGrid(88), &m_path);
@@ -38,7 +38,7 @@ void Follow::Update(Entity* pEntity, float deltaTime)
 	if (m_NextNode >= m_path.Size())
 	{
 		pEntity->SetPosition(((GridNode*)m_path[m_path.Size() -1])->m_v2Pos);
-		return;
+		return Vector2(0, 0);;
 	}
 
 	Vector2 dest = ((GridNode*)m_path[m_NextNode])->m_v2Pos;
@@ -54,6 +54,8 @@ void Follow::Update(Entity* pEntity, float deltaTime)
 	{
 		++m_NextNode;
 	}
+
+	return Vector2(0, 0);
 }
 
 //http://natureofcode.com/book/chapter-6-autonomous-agents/

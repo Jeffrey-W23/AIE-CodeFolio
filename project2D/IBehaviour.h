@@ -1,4 +1,5 @@
 #pragma once
+#include "Vector2.h"
 
 class Entity;
 
@@ -6,9 +7,14 @@ class IBehaviour {
 	
 public:
 
-	IBehaviour();
-	~IBehaviour();
+	IBehaviour(float fWeighting)
+	{
+		m_fWeighting = fWeighting;
+	}
 
-	virtual void Update(Entity* pEntity, float deltaTime) = 0;
+	~IBehaviour(){}
+
+	virtual Vector2 Update(Entity* pEntity, float deltaTime) = 0;
+	
+	float m_fWeighting;
 };
-

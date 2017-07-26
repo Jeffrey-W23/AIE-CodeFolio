@@ -5,10 +5,10 @@
 class KeyboardController : public IBehaviour
 {
 public:
-	KeyboardController();
+	KeyboardController(float fWeighting);
 	~KeyboardController();
 
-	void Update(Entity* pEntity, float deltaTime);
+	Vector2 Update(Entity* pEntity, float deltaTime);
 
 protected:
 

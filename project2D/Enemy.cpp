@@ -1,6 +1,6 @@
 #include "Enemy.h"
-#include "Idle.h"
-#include "Patrol.h"
+#include "IdleState.h"
+#include "FollowState.h"
 #include "CollisionManager.h"
 
 Enemy::Enemy()
@@ -9,8 +9,8 @@ Enemy::Enemy()
 	CollisionManager* collider = CollisionManager::GetInstance();
 	collider->AddObject(this);
 
-	m_AIStateMachine->AddState(0, new Idle());
-	m_AIStateMachine->AddState(1, new Patrol());
+	m_AIStateMachine->AddState(0, new IdleState());
+	m_AIStateMachine->AddState(1, new FollowState());
 	m_AIStateMachine->PushState(0);
 
 	m_force = Vector2(10, 10);
@@ -19,7 +19,7 @@ Enemy::Enemy()
 	m_position = Vector2(0, 0);
 
 	// Set the type of object to wall
-	this->SetType(PLAYER);
+	this->SetType(ENEMY);
 }
 
 Enemy::~Enemy()

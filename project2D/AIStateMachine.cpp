@@ -34,7 +34,7 @@ AIStateMachine::~AIStateMachine()
 //--------------------------------------------------------------------------------------
 void AIStateMachine::Update(float deltaTime, Entity* pEntity)
 {
-	_ASSERT(m_CurrentStack.Size() > 0);
+	//_ASSERT(m_CurrentStack.Size() > 0);
 	if (m_CurrentStack.Size() <= 0)
 		return;
 
@@ -53,9 +53,9 @@ void AIStateMachine::Update(float deltaTime, Entity* pEntity)
 //--------------------------------------------------------------------------------------
 void AIStateMachine::Draw(Renderer2D* m_2dRenderer)
 {
-	_ASSERT(m_2dRenderer);
+	//_ASSERT(m_2dRenderer);
 
-	_ASSERT(m_CurrentStack.Size() > 0);
+	//_ASSERT(m_CurrentStack.Size() > 0);
 	if (m_CurrentStack.Size() <= 0)
 		return;
 
@@ -117,7 +117,7 @@ void AIStateMachine::PopAll()
 //--------------------------------------------------------------------------------------
 void AIStateMachine::AddState(int nStateIndex, AIState* pState)
 {
-	_ASSERT(pState);
+	//_ASSERT(pState);
 	m_StateList.Insert(nStateIndex, pState);
 }
 
