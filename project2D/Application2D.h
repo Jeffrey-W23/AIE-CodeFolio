@@ -2,13 +2,12 @@
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Audio.h"
-#include "Grid.h"
-#include "Player.h"
-#include "Enemy.h"
-#include "Enemy1.h"
 
 class AIBehaviourTree;
-class DecisionTree;
+class Enemy;
+class Enemy1;
+class Enemy2;
+class Player;
 
 class Application2D : public aie::Application {
 public:
@@ -30,12 +29,12 @@ protected:
 	aie::Font*			m_font;
 	aie::Audio*			m_audio;
 
-	float m_cameraX, m_cameraY;
+	//float m_cameraX, m_cameraY;
 	float m_timer;
 
 	Player* m_Player;
 	Enemy* m_Enemy;
 	Enemy1* m_Enemy1;
-	DecisionTree* m_DecisionTree;
+	Enemy2* m_Enemy2;
 	AIBehaviourTree* m_BehaviourTree;
 };

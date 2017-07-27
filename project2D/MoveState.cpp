@@ -4,11 +4,9 @@
 #include "Flee.h"
 #include "Seek.h"
 
-class Entity;
-
 MoveState::MoveState()
 {
-	m_behaviours.PushBack(new Flee(0.5f));
+	m_behaviours.PushBack(new Flee(0.0f));
 	m_behaviours.PushBack(new Seek(1.0f));
 }
 

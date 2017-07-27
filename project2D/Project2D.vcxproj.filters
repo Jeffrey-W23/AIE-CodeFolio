@@ -156,18 +156,6 @@
     <ClCompile Include="AIBehaviourTree.cpp">
       <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="DecisionButtonPressed.cpp">
-      <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="DecisionNothingPressed.cpp">
-      <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="DecisionPrint.cpp">
-      <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="DecisionTree.cpp">
-      <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
-    </ClCompile>
     <ClCompile Include="AStar.cpp">
       <Filter>Artificial Intelligence\AStar\Sources</Filter>
     </ClCompile>
@@ -212,6 +200,18 @@
     </ClCompile>
     <ClCompile Include="ControllerState.cpp">
       <Filter>Artificial Intelligence\State Machine\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy2.cpp">
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="QWhatBehaviour.cpp">
+      <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ASeek.cpp">
+      <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="AFlee.cpp">
+      <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -317,21 +317,6 @@
     <ClInclude Include="BaseDecision.h">
       <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="DecisionButtonPressed.h">
-      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="DecisionNothingPressed.h">
-      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="DecisionPrint.h">
-      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="DecisionQuestion.h">
-      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="DecisionTree.h">
-      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
-    </ClInclude>
     <ClInclude Include="AStar.h">
       <Filter>Artificial Intelligence\AStar\Headers</Filter>
     </ClInclude>
@@ -388,6 +373,24 @@
     </ClInclude>
     <ClInclude Include="IdleState.h">
       <Filter>Artificial Intelligence\State Machine\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy2.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseQuestion.h">
+      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseAnwser.h">
+      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="QWhatBehaviour.h">
+      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ASeek.h">
+      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AFlee.h">
+      <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

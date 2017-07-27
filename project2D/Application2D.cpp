@@ -2,9 +2,13 @@
 #include "Texture.h"
 #include "Font.h"
 #include "Input.h"
-#include "DecisionTree.h"
 #include "AIBehaviourTree.h"
 #include "CollisionManager.h"
+#include "Player.h"
+#include "Enemy.h"
+#include "Enemy1.h"
+#include "Enemy2.h"
+#include "Grid.h"
 
 Application2D::Application2D() {
 
@@ -33,13 +37,12 @@ bool Application2D::startup() {
 	m_Player = new Player();
 	m_Enemy = new Enemy();
 	m_Enemy1 = new Enemy1();
-
-	m_DecisionTree = new DecisionTree;
+	m_Enemy2 = new Enemy2();
 
 	m_BehaviourTree = new AIBehaviourTree();
 
-	m_cameraX = -300;
-	m_cameraY = -150;
+	//m_cameraX = -300;
+	//m_cameraY = -150;
 	m_timer = 0;
 
 	return true;
@@ -59,7 +62,7 @@ void Application2D::shutdown() {
 	delete m_Player;
 	delete m_Enemy;
 	delete m_Enemy1;
-	delete m_DecisionTree;
+	delete m_Enemy2;
 	delete m_BehaviourTree;
 }
 
@@ -68,7 +71,7 @@ void Application2D::update(float deltaTime)
 	m_Player->Update(deltaTime);
 	m_Enemy->Update(deltaTime);
 	m_Enemy1->Update(deltaTime);
-	m_DecisionTree->Update(nullptr, deltaTime);
+	m_Enemy2->Update(deltaTime);
 	m_BehaviourTree->Update(deltaTime);
 	m_timer += deltaTime;
 
@@ -76,7 +79,7 @@ void Application2D::update(float deltaTime)
 	aie::Input* input = aie::Input::getInstance();
 
 	// use arrow keys to move camera
-	if (input->isKeyDown(aie::INPUT_KEY_UP))
+	/*if (input->isKeyDown(aie::INPUT_KEY_UP))
 		m_cameraY += 500.0f * deltaTime;
 
 	if (input->isKeyDown(aie::INPUT_KEY_DOWN))
@@ -86,11 +89,11 @@ void Application2D::update(float deltaTime)
 		m_cameraX -= 500.0f * deltaTime;
 
 	if (input->isKeyDown(aie::INPUT_KEY_RIGHT))
-		m_cameraX += 500.0f * deltaTime;
+		m_cameraX += 500.0f * deltaTime;*/
 
 	// example of audio
-	if (input->wasKeyPressed(aie::INPUT_KEY_SPACE))
-		m_audio->play();
+	/*if (input->wasKeyPressed(aie::INPUT_KEY_SPACE))
+		m_audio->play();*/
 
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
@@ -103,7 +106,7 @@ void Application2D::draw() {
 	clearScreen();
 
 	// set the camera position before we begin rendering
-	m_2dRenderer->setCameraPos(m_cameraX, m_cameraY);
+	//m_2dRenderer->setCameraPos(m_cameraX, m_cameraY);
 
 	// begin drawing sprites
 	m_2dRenderer->begin();
@@ -113,6 +116,7 @@ void Application2D::draw() {
 	m_Player->Draw(m_2dRenderer);
 	m_Enemy->Draw(m_2dRenderer);
 	m_Enemy1->Draw(m_2dRenderer);
+	m_Enemy2->Draw(m_2dRenderer);
 
 	//// demonstrate animation
 	//m_2dRenderer->setUVRect(int(m_timer) % 8 / 8.0f, 0, 1.f / 8, 1.f / 8);
