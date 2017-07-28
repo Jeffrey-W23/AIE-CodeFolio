@@ -98,15 +98,36 @@ public:
 		return (2 * parent) + whichChild;
 	}
 
-	bool Contains(AStarNode* pData)
+	int Contains(AStarNode* pData)
 	{
 		for (int i = 0; i < m_Data.Size(); ++i)
 		{
 			if (m_Data[i] == pData)
-				return true;
+				return i;
 		}
 
-		return false;
+		return -1;
+	}
+
+	void Resort(int index)
+	{
+		if (index == 0)
+			return;
+
+		int nNodeIndex = index;
+		int nParent = GetParentIndex(index);
+
+		//Check if node has a lower F value than parent, if so then swap.
+		while (nParent >= 0 && m_Data[nNodeIndex]->m_nFScore < m_Data[nParent]->m_nFScore)
+		{
+			//Swap
+			AStarNode* temp = m_Data[nParent];
+			m_Data[nParent] = m_Data[nNodeIndex];
+			m_Data[nNodeIndex] = temp;
+
+			nNodeIndex = nParent;
+			nParent = GetParentIndex(nNodeIndex);
+		}
 	}
 
 private:

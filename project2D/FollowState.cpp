@@ -7,6 +7,7 @@ class Entity;
 FollowState::FollowState()
 {
 	m_behaviours.PushBack(new Follow(1.0f));
+	// add another behaviour
 }
 
 FollowState::~FollowState()

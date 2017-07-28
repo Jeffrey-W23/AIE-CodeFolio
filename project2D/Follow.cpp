@@ -44,7 +44,6 @@ Vector2 Follow::Update(Entity* pEntity, float deltaTime)
 	Vector2 dest = ((GridNode*)m_path[m_NextNode])->m_v2Pos;
 	Vector2 dir = dest - pEntity->GetPosition();
 	dir.normalise();
-	pEntity->SetPosition(pEntity->GetPosition() + dir * 80.0 * deltaTime);
 
 	//Check distance and update destination when we get close to node
 	Vector2 dist = dest - pEntity->GetPosition();
@@ -55,7 +54,7 @@ Vector2 Follow::Update(Entity* pEntity, float deltaTime)
 		++m_NextNode;
 	}
 
-	return Vector2(0, 0);
+	return dir * 80.0 * deltaTime;
 }
 
 //http://natureofcode.com/book/chapter-6-autonomous-agents/

@@ -153,9 +153,6 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Other\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="AIBehaviourTree.cpp">
-      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
-    </ClCompile>
     <ClCompile Include="AStar.cpp">
       <Filter>Artificial Intelligence\AStar\Sources</Filter>
     </ClCompile>
@@ -212,6 +209,18 @@
     </ClCompile>
     <ClCompile Include="AFlee.cpp">
       <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy3.cpp">
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BTASeek.cpp">
+      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BTAFlee.cpp">
+      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BTAStop.cpp">
+      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -293,27 +302,6 @@
     <ClInclude Include="Entity.h">
       <Filter>Other\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="AIBehaviourTree.h">
-      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="BehaviourNode.h">
-      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Composite.h">
-      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="ExampleAction.h">
-      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="ExampleQuestion.h">
-      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Selector.h">
-      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Sequence.h">
-      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
-    </ClInclude>
     <ClInclude Include="BaseDecision.h">
       <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
     </ClInclude>
@@ -391,6 +379,39 @@
     </ClInclude>
     <ClInclude Include="AFlee.h">
       <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy3.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BTBaseNode.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BTComposite.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BTSequence.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BTSelector.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BTASeek.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BTAFlee.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BTAStop.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BTQFlee.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BTQSeek.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BTQStop.h">
+      <Filter>Artificial Intelligence\Behaviour Tree</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

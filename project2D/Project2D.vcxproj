@@ -89,13 +89,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AIBehaviourTree.cpp" />
     <ClCompile Include="AIState.cpp" />
     <ClCompile Include="AIStateMachine.cpp" />
     <ClCompile Include="Application2D.cpp" />
     <ClCompile Include="AStar.cpp" />
+    <ClCompile Include="BTAFlee.cpp" />
+    <ClCompile Include="BTASeek.cpp" />
+    <ClCompile Include="BTAStop.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="ControllerState.cpp" />
+    <ClCompile Include="Enemy3.cpp" />
     <ClCompile Include="QWhatBehaviour.cpp" />
     <ClCompile Include="AFlee.cpp" />
     <ClCompile Include="ASeek.cpp" />
@@ -126,7 +129,6 @@
     <ClCompile Include="Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AIBehaviourTree.h" />
     <ClInclude Include="AIState.h" />
     <ClInclude Include="AIStateMachine.h" />
     <ClInclude Include="Application2D.h" />
@@ -135,11 +137,18 @@
     <ClInclude Include="AStarNode.h" />
     <ClInclude Include="BaseAnwser.h" />
     <ClInclude Include="BaseDecision.h" />
-    <ClInclude Include="BehaviourNode.h" />
+    <ClInclude Include="BTAFlee.h" />
+    <ClInclude Include="BTASeek.h" />
+    <ClInclude Include="BTAStop.h" />
+    <ClInclude Include="BTBaseNode.h" />
+    <ClInclude Include="BTQFlee.h" />
+    <ClInclude Include="BTQSeek.h" />
+    <ClInclude Include="BTQStop.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="CollisionManager.h" />
-    <ClInclude Include="Composite.h" />
+    <ClInclude Include="BTComposite.h" />
     <ClInclude Include="ControllerState.h" />
+    <ClInclude Include="Enemy3.h" />
     <ClInclude Include="QWhatBehaviour.h" />
     <ClInclude Include="AFlee.h" />
     <ClInclude Include="ASeek.h" />
@@ -150,8 +159,6 @@
     <ClInclude Include="Enemy1.h" />
     <ClInclude Include="Enemy2.h" />
     <ClInclude Include="Entity.h" />
-    <ClInclude Include="ExampleAction.h" />
-    <ClInclude Include="ExampleQuestion.h" />
     <ClInclude Include="Flee.h" />
     <ClInclude Include="Follow.h" />
     <ClInclude Include="FunctionPointerExampleClass.h" />
@@ -176,8 +183,8 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Seek.h" />
-    <ClInclude Include="Selector.h" />
-    <ClInclude Include="Sequence.h" />
+    <ClInclude Include="BTSelector.h" />
+    <ClInclude Include="BTSequence.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachine.h" />

@@ -2,12 +2,12 @@
 #include "Texture.h"
 #include "Font.h"
 #include "Input.h"
-#include "AIBehaviourTree.h"
 #include "CollisionManager.h"
 #include "Player.h"
 #include "Enemy.h"
 #include "Enemy1.h"
 #include "Enemy2.h"
+#include "Enemy3.h"
 #include "Grid.h"
 
 Application2D::Application2D() {
@@ -38,8 +38,7 @@ bool Application2D::startup() {
 	m_Enemy = new Enemy();
 	m_Enemy1 = new Enemy1();
 	m_Enemy2 = new Enemy2();
-
-	m_BehaviourTree = new AIBehaviourTree();
+	m_Enemy3 = new Enemy3();
 
 	//m_cameraX = -300;
 	//m_cameraY = -150;
@@ -63,7 +62,7 @@ void Application2D::shutdown() {
 	delete m_Enemy;
 	delete m_Enemy1;
 	delete m_Enemy2;
-	delete m_BehaviourTree;
+	delete m_Enemy3;
 }
 
 void Application2D::update(float deltaTime) 
@@ -72,7 +71,7 @@ void Application2D::update(float deltaTime)
 	m_Enemy->Update(deltaTime);
 	m_Enemy1->Update(deltaTime);
 	m_Enemy2->Update(deltaTime);
-	m_BehaviourTree->Update(deltaTime);
+	m_Enemy3->Update(deltaTime);
 	m_timer += deltaTime;
 
 	// input example
@@ -117,6 +116,7 @@ void Application2D::draw() {
 	m_Enemy->Draw(m_2dRenderer);
 	m_Enemy1->Draw(m_2dRenderer);
 	m_Enemy2->Draw(m_2dRenderer);
+	m_Enemy3->Draw(m_2dRenderer);
 
 	//// demonstrate animation
 	//m_2dRenderer->setUVRect(int(m_timer) % 8 / 8.0f, 0, 1.f / 8, 1.f / 8);

@@ -7,6 +7,7 @@ class AIBehaviourTree;
 class Enemy;
 class Enemy1;
 class Enemy2;
+class Enemy3;
 class Player;
 
 class Application2D : public aie::Application {
@@ -36,5 +37,6 @@ protected:
 	Enemy* m_Enemy;
 	Enemy1* m_Enemy1;
 	Enemy2* m_Enemy2;
+	Enemy3* m_Enemy3;
 	AIBehaviourTree* m_BehaviourTree;
 };
