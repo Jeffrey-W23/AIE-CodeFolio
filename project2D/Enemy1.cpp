@@ -16,7 +16,7 @@ Enemy1::Enemy1()
 	m_velocity = Vector2(0, 0);
 	m_position = Vector2(400, 400);
 
-	SetPosition(Vector2(400, 400));
+	SetPosition(Vector2(800, 500));
 
 	// Set the type of object to wall
 	this->SetType(ENEMY);

@@ -7,7 +7,7 @@ using namespace aie;
 class FollowState : public AIState
 {
 public:
-	FollowState();
+	FollowState(int nStart, int nEnd);
 	~FollowState();
 
 	void onEnter(AIStateMachine* pMachine);

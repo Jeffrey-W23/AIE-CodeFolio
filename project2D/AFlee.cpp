@@ -6,7 +6,7 @@ using namespace std;
 
 AFlee::AFlee()
 {
-	m_behaviours.PushBack(new Flee(1.0f));
+	m_behaviours.PushBack(new Flee(1.0f, true));
 }
 
 AFlee::~AFlee()

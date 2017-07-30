@@ -4,10 +4,9 @@
 
 class Entity;
 
-FollowState::FollowState()
+FollowState::FollowState(int nStart, int nEnd)
 {
-	m_behaviours.PushBack(new Follow(1.0f));
-	// add another behaviour
+	m_behaviours.PushBack(new Follow(1.0f, nStart, nEnd));
 }
 
 FollowState::~FollowState()

@@ -15,7 +15,7 @@ Enemy2::Enemy2()
 	m_acceleration = Vector2(0, 0);
 	m_velocity = Vector2(0, 0);
 	m_position = Vector2(0, 0);
-	SetPosition(Vector2(400,400));
+	SetPosition(Vector2(900,500));
 
 	// Set the type of object to wall
 	this->SetType(ENEMY);
@@ -24,8 +24,8 @@ Enemy2::Enemy2()
 	m_pRoot = new QWhatBehaviour();
 
 	// Anwsers
-	m_pRoot->m_pTrueDecision = new AFlee();
-	m_pRoot->m_pFalseDecision = new ASeek();
+	m_pRoot->m_pTrueDecision = new ASeek();
+	m_pRoot->m_pFalseDecision = new AFlee();
 }
 
 Enemy2::~Enemy2()
@@ -42,7 +42,7 @@ void Enemy2::Update(float deltaTime)
 
 void Enemy2::Draw(Renderer2D* m_2dRenderer)
 {
-	m_2dRenderer->setRenderColour(1, 1, 0, 1);
+	m_2dRenderer->setRenderColour(0, 0, 1, 1);
 	m_2dRenderer->drawSpriteTransformed3x3(nullptr, GlobalTrasform, 40, 40);
 	m_2dRenderer->setRenderColour(0xFFFFFFFF);
 }

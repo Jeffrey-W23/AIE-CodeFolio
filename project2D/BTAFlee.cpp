@@ -7,7 +7,7 @@ using namespace aie;
 
 BTAFlee::BTAFlee()
 {
-	m_behaviours.PushBack(new Flee(1.0f));
+	m_behaviours.PushBack(new Flee(1.0f, true));
 }
 
 BTAFlee::~BTAFlee()

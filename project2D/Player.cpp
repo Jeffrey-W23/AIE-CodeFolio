@@ -16,7 +16,7 @@ Player::Player()
 	m_velocity = Vector2(0,0);
 	m_position = Vector2(0, 0);
 
-	SetPosition(Vector2(400, 400));
+	SetPosition(Vector2(700, 500));
 
 	// Set the type of object to wall
 	this->SetType(PLAYER);

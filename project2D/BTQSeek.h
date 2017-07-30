@@ -7,26 +7,11 @@ using namespace aie;
 
 class BTQSeek : public BTBaseNode
 {
+public:
+	BTQSeek();
+	~BTQSeek();
+	EBehaviourResult Execute(Entity* pEntity, float deltaTime);
+
+private:
 	bool m_bBehaviour;
-
-	EBehaviourResult Execute(Entity* pEntity, float deltaTimes)
-	{
-		if (Input::getInstance()->wasKeyPressed(INPUT_KEY_1))
-		{
-			m_bBehaviour = true;
-		}
-		else
-		{
-			m_bBehaviour = false;
-		}
-
-		if (m_bBehaviour)
-		{
-			return EBHAVIOUR_SUCCESS;
-		}
-		else
-		{
-			return EBHAVIOUR_FAILURE;
-		}
-	}
 };

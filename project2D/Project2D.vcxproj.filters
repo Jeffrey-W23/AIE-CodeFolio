@@ -222,6 +222,24 @@
     <ClCompile Include="BTAStop.cpp">
       <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
     </ClCompile>
+    <ClCompile Include="BTQSeek.cpp">
+      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BTQFlee.cpp">
+      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BTQStop.cpp">
+      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy4.cpp">
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ObstacleAvoidance.cpp">
+      <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrive.cpp">
+      <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssociativeArray.h">
@@ -411,7 +429,16 @@
       <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
     </ClInclude>
     <ClInclude Include="BTQStop.h">
-      <Filter>Artificial Intelligence\Behaviour Tree</Filter>
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy4.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ObstacleAvoidance.h">
+      <Filter>Artificial Intelligence\Behaviours\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Arrive.h">
+      <Filter>Artificial Intelligence\Behaviours\Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,6 +1,13 @@
 #pragma once
 #include "BaseQuestion.h"
 
+enum EWhatBehaviour
+{
+	EWHATBHAVIOUR_SEEK,
+	EWHATBHAVIOUR_FLEE,
+	EWHATBHAVIOUR_STOP
+};
+
 class QWhatBehaviour : public BaseQuestion
 {
 public:
@@ -9,5 +16,5 @@ public:
 	void MakeDecision(Entity* pEntity, float deltaTime);
 
 private:
-	bool m_bBehaviour;
+	EWhatBehaviour m_bBehaviour;
 };

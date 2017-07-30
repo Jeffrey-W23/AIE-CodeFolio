@@ -11,7 +11,7 @@
 struct GridNode;
 using namespace aie;
 
-Follow::Follow(float fWeighting) : IBehaviour(fWeighting)
+Follow::Follow(float fWeighting, int nStart, int nEnd) : IBehaviour(fWeighting)
 {
 	Grid* pGrid = Grid::Instance();
 
@@ -23,6 +23,9 @@ Follow::Follow(float fWeighting) : IBehaviour(fWeighting)
 	m_pAStar->SetFunction(&Heuristic);
 
 	m_NextNode = 0;
+
+	m_nStart = nStart;
+	m_nEnd = nEnd;
 }
 
 Follow::~Follow()
@@ -33,7 +36,7 @@ Follow::~Follow()
 Vector2 Follow::Update(Entity* pEntity, float deltaTime)
 {
 	m_path.Clear();
-	m_pAStar->CalculatePath(m_pGrid->GetGrid(1), m_pGrid->GetGrid(88), &m_path);
+	m_pAStar->CalculatePath(m_pGrid->GetGrid(m_nStart), m_pGrid->GetGrid(m_nEnd), &m_path);
 
 	if (m_NextNode >= m_path.Size())
 	{

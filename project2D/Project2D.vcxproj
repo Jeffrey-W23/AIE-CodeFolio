@@ -96,9 +96,14 @@
     <ClCompile Include="BTAFlee.cpp" />
     <ClCompile Include="BTASeek.cpp" />
     <ClCompile Include="BTAStop.cpp" />
+    <ClCompile Include="BTQFlee.cpp" />
+    <ClCompile Include="BTQSeek.cpp" />
+    <ClCompile Include="BTQStop.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="ControllerState.cpp" />
     <ClCompile Include="Enemy3.cpp" />
+    <ClCompile Include="Enemy4.cpp" />
+    <ClCompile Include="ObstacleAvoidance.cpp" />
     <ClCompile Include="QWhatBehaviour.cpp" />
     <ClCompile Include="AFlee.cpp" />
     <ClCompile Include="ASeek.cpp" />
@@ -127,6 +132,7 @@
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vector3.cpp" />
     <ClCompile Include="Vector4.cpp" />
+    <ClCompile Include="Arrive.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AIState.h" />
@@ -149,6 +155,8 @@
     <ClInclude Include="BTComposite.h" />
     <ClInclude Include="ControllerState.h" />
     <ClInclude Include="Enemy3.h" />
+    <ClInclude Include="Enemy4.h" />
+    <ClInclude Include="ObstacleAvoidance.h" />
     <ClInclude Include="QWhatBehaviour.h" />
     <ClInclude Include="AFlee.h" />
     <ClInclude Include="ASeek.h" />
@@ -192,6 +200,7 @@
     <ClInclude Include="Vector3.h" />
     <ClInclude Include="Vector4.h" />
     <ClInclude Include="VectorCast.h" />
+    <ClInclude Include="Arrive.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

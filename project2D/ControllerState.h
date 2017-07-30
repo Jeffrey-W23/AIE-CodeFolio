@@ -13,4 +13,7 @@ public:
 	void onExit(AIStateMachine* pMachine);
 	void onUpdate(float deltaTime, Entity* pEntity, AIStateMachine* pMachine);
 	void onDraw(Renderer2D* m_2dRenderer);
+
+private:
+	bool m_bStop;
 };

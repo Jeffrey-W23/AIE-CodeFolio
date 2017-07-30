@@ -24,7 +24,7 @@ Grid::Grid()
 			// Calculate the index 
 			int index = (y * GRID_SIZE) + x;
 
-			Vector2 pos(x * NODE_SIZE, y * NODE_SIZE);
+			Vector2 pos(x * NODE_SIZE + 150, y * NODE_SIZE + 150);
 			m_ppGrid[index] = new GridNode(pos, index, x, y);
 
 			if (x % 3 == 0 && y != 5)
@@ -162,9 +162,10 @@ void Grid::DrawGrid(Renderer2D* m_2dRenderer)
 			m_2dRenderer->setRenderColour(0x808080FF);
 
 		m_2dRenderer->drawBox(x, y, NODE_SIZE - GRID_SPACING, NODE_SIZE - GRID_SPACING);
+		m_2dRenderer->setRenderColour(0xFFFFFFFF);
 
 		// Draw Adjacency
-		for (int a = 0; a < m_ppGrid[i]->m_AdjacentList.Size(); ++a)
+		/*for (int a = 0; a < m_ppGrid[i]->m_AdjacentList.Size(); ++a)
 		{
 			GridNode* otherNode = ((GridNode*)m_ppGrid[i]->m_AdjacentList[a]->m_nEndNode);
 
@@ -173,7 +174,7 @@ void Grid::DrawGrid(Renderer2D* m_2dRenderer)
 			m_2dRenderer->setRenderColour(0xFF0000FF);
 			m_2dRenderer->drawLine(x, y, otherx, othery, EDGE_THICKNESS);
 			m_2dRenderer->setRenderColour(0xFFFFFFFF);
-		}
+		}*/
 	}
 
 	// Draw Path

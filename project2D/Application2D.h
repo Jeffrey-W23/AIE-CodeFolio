@@ -8,7 +8,16 @@ class Enemy;
 class Enemy1;
 class Enemy2;
 class Enemy3;
+class Enemy4;
 class Player;
+
+enum EWhatEntity
+{
+	EWHATENTITY_PLAYER,
+	EWHATENTITY_ENEMYSTATE,
+	EWHATENTITY_ENEMYDECTREE,
+	EWHATENTITY_ENEMYBEHTREE
+};
 
 class Application2D : public aie::Application {
 public:
@@ -38,5 +47,7 @@ protected:
 	Enemy1* m_Enemy1;
 	Enemy2* m_Enemy2;
 	Enemy3* m_Enemy3;
+	Enemy4* m_Enemy4;
 	AIBehaviourTree* m_BehaviourTree;
+	EWhatEntity m_eEntityType;
 };

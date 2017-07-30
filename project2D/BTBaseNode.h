@@ -12,6 +12,7 @@ enum EBehaviourResult
 class BTBaseNode
 {
 public:
+	BTBaseNode() {};
 	virtual ~BTBaseNode() {};
 	virtual EBehaviourResult Execute(Entity* pEntity, float deltaTime) = 0;
 };

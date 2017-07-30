@@ -8,6 +8,7 @@
 #include "Enemy1.h"
 #include "Enemy2.h"
 #include "Enemy3.h"
+#include "Enemy4.h"
 #include "Grid.h"
 
 Application2D::Application2D() {
@@ -39,6 +40,7 @@ bool Application2D::startup() {
 	m_Enemy1 = new Enemy1();
 	m_Enemy2 = new Enemy2();
 	m_Enemy3 = new Enemy3();
+	m_Enemy4 = new Enemy4();
 
 	//m_cameraX = -300;
 	//m_cameraY = -150;
@@ -63,19 +65,42 @@ void Application2D::shutdown() {
 	delete m_Enemy1;
 	delete m_Enemy2;
 	delete m_Enemy3;
+	delete m_Enemy4;
 }
 
 void Application2D::update(float deltaTime) 
 {
-	m_Player->Update(deltaTime);
 	m_Enemy->Update(deltaTime);
-	m_Enemy1->Update(deltaTime);
-	m_Enemy2->Update(deltaTime);
-	m_Enemy3->Update(deltaTime);
+	m_Enemy4->Update(deltaTime);
 	m_timer += deltaTime;
 
 	// input example
 	aie::Input* input = aie::Input::getInstance();
+
+	if (input->wasKeyPressed(aie::INPUT_KEY_1))
+		m_eEntityType = EWHATENTITY_PLAYER;
+
+	if (input->wasKeyPressed(aie::INPUT_KEY_2))
+		m_eEntityType = EWHATENTITY_ENEMYSTATE;
+
+	if (input->wasKeyPressed(aie::INPUT_KEY_3))
+		m_eEntityType = EWHATENTITY_ENEMYDECTREE;
+
+	if (input->wasKeyPressed(aie::INPUT_KEY_4))
+		m_eEntityType = EWHATENTITY_ENEMYBEHTREE;
+
+	// Which Entity
+	if (m_eEntityType == EWHATENTITY_PLAYER)
+		m_Player->Update(deltaTime);
+
+	else if (m_eEntityType == EWHATENTITY_ENEMYSTATE)
+		m_Enemy1->Update(deltaTime);
+
+	else if (m_eEntityType == EWHATENTITY_ENEMYDECTREE)
+		m_Enemy2->Update(deltaTime);
+
+	else if (m_eEntityType == EWHATENTITY_ENEMYBEHTREE)
+		m_Enemy3->Update(deltaTime);
 
 	// use arrow keys to move camera
 	/*if (input->isKeyDown(aie::INPUT_KEY_UP))
@@ -117,6 +142,7 @@ void Application2D::draw() {
 	m_Enemy1->Draw(m_2dRenderer);
 	m_Enemy2->Draw(m_2dRenderer);
 	m_Enemy3->Draw(m_2dRenderer);
+	m_Enemy4->Draw(m_2dRenderer);
 
 	//// demonstrate animation
 	//m_2dRenderer->setUVRect(int(m_timer) % 8 / 8.0f, 0, 1.f / 8, 1.f / 8);
@@ -129,9 +155,9 @@ void Application2D::draw() {
 	//// draw a thin line
 	//m_2dRenderer->drawLine(300, 300, 600, 400, 2, 1);
 
-	//// draw a moving purple circle
-	//m_2dRenderer->setRenderColour(1, 0, 1, 1);
-	//m_2dRenderer->drawCircle(sin(m_timer) * 100 + 600, 150, 50);
+	// draw a moving purple circle
+	m_2dRenderer->setRenderColour(1, 0, 1, 1);
+	m_2dRenderer->drawCircle(950, 150, 30, 30);
 
 	//// draw a rotating red box
 	//m_2dRenderer->setRenderColour(1, 0, 0, 1);
