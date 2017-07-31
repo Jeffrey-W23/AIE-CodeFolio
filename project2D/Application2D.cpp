@@ -138,7 +138,7 @@ void Application2D::draw() {
 	// begin drawing sprites
 	m_2dRenderer->begin();
 
-	Grid::Instance()->DrawGrid(m_2dRenderer);
+	//Grid::Instance()->DrawGrid(m_2dRenderer);
 	OAMap::Instance()->Draw(m_2dRenderer);
 
 	m_Player->Draw(m_2dRenderer);

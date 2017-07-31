@@ -75,6 +75,6 @@ void Enemy3::Update(float deltaTime)
 void Enemy3::Draw(Renderer2D* m_2dRenderer)
 {
 	m_2dRenderer->setRenderColour(0, 1, 0, 1);
-	m_2dRenderer->drawSpriteTransformed3x3(nullptr, GlobalTrasform, 35, 35);
+	m_2dRenderer->drawSpriteTransformed3x3(nullptr, GlobalTrasform, 15, 15);
 	m_2dRenderer->setRenderColour(0xFFFFFFFF);
 }
