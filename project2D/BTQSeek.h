@@ -11,7 +11,4 @@ public:
 	BTQSeek();
 	~BTQSeek();
 	EBehaviourResult Execute(Entity* pEntity, float deltaTime);
-
-private:
-	bool m_bBehaviour;
 };

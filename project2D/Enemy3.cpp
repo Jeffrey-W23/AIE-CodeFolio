@@ -22,6 +22,8 @@ Enemy3::Enemy3()
 	m_position = Vector2(0, 0);
 	SetPosition(Vector2(1000, 500));
 
+	m_eBehType = EBEHAVIOURTYPE_STOP;
+
 	// Set the type of object to wall
 	this->SetType(ENEMY);
 
@@ -52,14 +54,21 @@ Enemy3::Enemy3()
 
 Enemy3::~Enemy3()
 {
-	/*delete pStop;
-	delete pSeek;	// OUT OF SCOPE?
-	delete pFlee;*/
 	delete m_pRoot;
 }
 
 void Enemy3::Update(float deltaTime)
 {
+	if (Input::getInstance()->wasKeyPressed(INPUT_KEY_SPACE))
+		m_eBehType = EBEHAVIOURTYPE_STOP;
+	
+	else if (Input::getInstance()->wasKeyPressed(INPUT_KEY_S))
+	{
+		m_eBehType = EBEHAVIOURTYPE_SEEK;
+		//else if (Input::getInstance()->wasKeyPressed(INPUT_KEY_F))
+		//m_eBehType = EBEHAVIOURTYPE_FLEE;
+	}
+
 	m_pRoot->Execute(this, deltaTime);
 }
 

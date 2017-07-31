@@ -3,6 +3,13 @@
 
 class BTBaseNode;
 
+enum EBehaviourType
+{
+	EBEHAVIOURTYPE_STOP,
+	EBEHAVIOURTYPE_SEEK,
+	EBEHAVIOURTYPE_FLEE
+};
+
 class Enemy3 : public Entity
 {
 public:
@@ -11,6 +18,8 @@ public:
 
 	void Update(float deltaTime);
 	void Draw(Renderer2D* m_2dRenderer);
+
+	EBehaviourType m_eBehType;
 
 private:
 	BTBaseNode* m_pRoot;

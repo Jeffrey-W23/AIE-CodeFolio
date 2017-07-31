@@ -11,7 +11,4 @@ public:
 	BTQFlee();
 	~BTQFlee();
 	EBehaviourResult Execute(Entity* pEntity, float deltaTime);
-
-private:
-	bool m_bBehaviour;
 };

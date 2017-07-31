@@ -1,8 +1,9 @@
 #include "BTQStop.h"
+#include "Entity.h"
+#include "Enemy3.h"
 
 BTQStop::BTQStop()
 {
-	m_bBehaviour = false;
 }
 
 BTQStop::~BTQStop()
@@ -12,20 +13,11 @@ BTQStop::~BTQStop()
 
 EBehaviourResult BTQStop::Execute(Entity* pEntity, float deltaTime)
 {
-	if (Input::getInstance()->wasKeyPressed(INPUT_KEY_SPACE))
-	{
-		m_bBehaviour = true;
-	}
-	else
-	{
-		m_bBehaviour = false;
-	}
-
-	if (m_bBehaviour)
+	if (((Enemy3*)pEntity)->m_eBehType == EBEHAVIOURTYPE_STOP)
 	{
 		return EBHAVIOUR_SUCCESS;
 	}
-	else
+	else if (((Enemy3*)pEntity)->m_eBehType != EBEHAVIOURTYPE_STOP)
 	{
 		return EBHAVIOUR_FAILURE;
 	}

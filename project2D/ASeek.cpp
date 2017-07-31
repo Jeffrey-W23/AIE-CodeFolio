@@ -39,5 +39,6 @@ void ASeek::MakeDecision(Entity* pEntity, float deltaTime)
 		}
 	}
 
+	pEntity->SetVelocity(v2TotalForce);
 	pEntity->SetPosition(pEntity->GetPosition() + v2TotalForce);
 }

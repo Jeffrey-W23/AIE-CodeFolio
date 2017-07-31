@@ -240,6 +240,18 @@
     <ClCompile Include="Arrive.cpp">
       <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
     </ClCompile>
+    <ClCompile Include="BaseObstacle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OAMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sqr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssociativeArray.h">
@@ -439,6 +451,18 @@
     </ClInclude>
     <ClInclude Include="Arrive.h">
       <Filter>Artificial Intelligence\Behaviours\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseObstacle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OAMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

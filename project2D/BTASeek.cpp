@@ -1,13 +1,16 @@
 #include "BTASeek.h"
 #include "Vector2.h"
-#include "Seek.h"
+#include "Seek.h" // take out and rename to arrive.
+#include "ObstacleAvoidance.h"
+#include "Arrive.h"
 #include "Entity.h"
 #include "Input.h"
 using namespace aie;
 
 BTASeek::BTASeek()
 {
-	m_behaviours.PushBack(new Seek(1.0f));
+	m_behaviours.PushBack(new Arrive(0.5f, EDECELERATION_SLOW));
+	m_behaviours.PushBack(new ObstacleAvoidance(1.0f));
 }
 
 BTASeek::~BTASeek()
@@ -40,6 +43,7 @@ EBehaviourResult BTASeek::Execute(Entity* pEntity, float deltaTime)
 		}
 	}
 
+	pEntity->SetVelocity(v2TotalForce);
 	pEntity->SetPosition(pEntity->GetPosition() + v2TotalForce);
 
 	return EBHAVIOUR_SUCCESS;

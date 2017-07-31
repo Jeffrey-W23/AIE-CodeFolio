@@ -1,13 +1,14 @@
 #include "BTAFlee.h"
 #include "Vector2.h"
-#include "Flee.h"
+#include "Flee.h" // take out and change the name
+#include "ObstacleAvoidance.h"
 #include "Entity.h"
 #include "Input.h"
 using namespace aie;
 
 BTAFlee::BTAFlee()
 {
-	m_behaviours.PushBack(new Flee(1.0f, true));
+	m_behaviours.PushBack(new ObstacleAvoidance(1.0f));
 }
 
 BTAFlee::~BTAFlee()
@@ -40,6 +41,7 @@ EBehaviourResult BTAFlee::Execute(Entity* pEntity, float deltaTime)
 		}
 	}
 
+	pEntity->SetVelocity(v2TotalForce);
 	pEntity->SetPosition(pEntity->GetPosition() + v2TotalForce);
 
 	return EBHAVIOUR_SUCCESS;

@@ -60,6 +60,7 @@ void ControllerState::onUpdate(float deltaTime, Entity* pEntity, AIStateMachine*
 			}
 		}
 
+		pEntity->SetVelocity(v2TotalForce);
 		pEntity->SetPosition(pEntity->GetPosition() + v2TotalForce);
 	}
 }

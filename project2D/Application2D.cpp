@@ -10,6 +10,7 @@
 #include "Enemy3.h"
 #include "Enemy4.h"
 #include "Grid.h"
+#include "OAMap.h"
 
 Application2D::Application2D() {
 
@@ -31,6 +32,7 @@ bool Application2D::startup() {
 	m_audio = new aie::Audio("./audio/powerup.wav");
 
 	Grid::create();
+	OAMap::create();
 
 	// Create instance for the collision manger
 	CollisionManager::Create();
@@ -56,6 +58,7 @@ void Application2D::shutdown() {
 	delete m_shipTexture;
 	delete m_2dRenderer;
 	Grid::destroy();
+	OAMap::destroy();
 
 	// Call the collision destroy fucntion to delete all bounding boxes.
 	CollisionManager::Destory();
@@ -136,6 +139,7 @@ void Application2D::draw() {
 	m_2dRenderer->begin();
 
 	Grid::Instance()->DrawGrid(m_2dRenderer);
+	OAMap::Instance()->Draw(m_2dRenderer);
 
 	m_Player->Draw(m_2dRenderer);
 	m_Enemy->Draw(m_2dRenderer);

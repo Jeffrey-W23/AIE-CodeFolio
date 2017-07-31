@@ -47,6 +47,7 @@ void FollowState::onUpdate(float deltaTime, Entity* pEntity, AIStateMachine* pMa
 		}
 	}
 
+	pEntity->SetVelocity(v2TotalForce);
 	pEntity->SetPosition(pEntity->GetPosition() + v2TotalForce);
 }
 

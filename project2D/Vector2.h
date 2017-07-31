@@ -303,7 +303,7 @@ public:
 	// Return:
 	//		Returns a float which is the distance between a and b.
 	//--------------------------------------------------------------------------------------
-	/*MATH_DLL*/ float Distance(Vector2 pos1, Vector2 pos2);
+	/*MATH_DLL*/ static float Distance(Vector2 pos1, Vector2 pos2);
 
 	//--------------------------------------------------------------------------------------
 	// Bezier: A function to calculate a bezier curves.

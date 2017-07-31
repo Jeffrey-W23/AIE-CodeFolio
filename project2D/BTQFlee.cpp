@@ -1,8 +1,9 @@
 #include "BTQFlee.h"
+#include "Entity.h"
+#include "Enemy3.h"
 
 BTQFlee::BTQFlee()
 {
-	m_bBehaviour = false;
 }
 
 BTQFlee::~BTQFlee()
@@ -12,20 +13,11 @@ BTQFlee::~BTQFlee()
 
 EBehaviourResult BTQFlee::Execute(Entity* pEntity, float deltaTime)
 {
-	if (Input::getInstance()->wasKeyPressed(INPUT_KEY_F))
-	{
-		m_bBehaviour = true;
-	}
-	else
-	{
-		m_bBehaviour = false;
-	}
-
-	if (m_bBehaviour)
+	if (((Enemy3*)pEntity)->m_eBehType == EBEHAVIOURTYPE_SEEK)
 	{
 		return EBHAVIOUR_SUCCESS;
 	}
-	else
+	else if (((Enemy3*)pEntity)->m_eBehType != EBEHAVIOURTYPE_SEEK)
 	{
 		return EBHAVIOUR_FAILURE;
 	}
