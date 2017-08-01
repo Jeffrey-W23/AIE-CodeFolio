@@ -9,8 +9,8 @@ using namespace aie;
 
 BTASeek::BTASeek()
 {
-	m_behaviours.PushBack(new Arrive(0.5f, EDECELERATION_SLOW));
 	m_behaviours.PushBack(new ObstacleAvoidance(1.0f));
+	m_behaviours.PushBack(new Arrive(0.5f, EDECELERATION_SLOW));
 }
 
 BTASeek::~BTASeek()
@@ -35,16 +35,25 @@ EBehaviourResult BTASeek::Execute(Entity* pEntity, float deltaTime)
 
 		float fMagnitude = v2TotalForce.magnitude();
 
-		if (fMagnitude > 10.0f)
+		if (fMagnitude > 150.0f)
 		{
 			v2TotalForce.normalise();
-			v2TotalForce = v2TotalForce * 10.0f;
+			v2TotalForce = v2TotalForce * 150.0f;
 			break;
 		}
 	}
 
-	pEntity->SetVelocity(v2TotalForce);
-	pEntity->SetPosition(pEntity->GetPosition() + v2TotalForce);
+	Vector2 vel = pEntity->GetVelocity();
+	vel += v2TotalForce;
+
+	if (vel.magnitude() > 80)
+	{
+		vel.normalise();
+		vel = vel * 80.0f;
+	}
+
+	pEntity->SetVelocity(vel);
+	pEntity->SetPosition(pEntity->GetPosition() + vel * deltaTime);
 
 	return EBHAVIOUR_SUCCESS;
 }

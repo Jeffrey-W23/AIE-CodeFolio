@@ -14,7 +14,7 @@ Circle::~Circle()
 void Circle::Draw(Renderer2D* m_2dRenderer)
 {
 	m_2dRenderer->setRenderColour(1, 0, 1, 1);
-	m_2dRenderer->drawCircle(m_v2Pos.x, m_v2Pos.y, m_fSize);
+	m_2dRenderer->drawCircle(m_v2Pos.x, m_v2Pos.y, m_fSize * 0.5f);
 	m_2dRenderer->setRenderColour(0xFFFFFFFF);
 }
 

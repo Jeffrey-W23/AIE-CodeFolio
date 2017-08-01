@@ -25,7 +25,7 @@ Vector2 Arrive::Update(Entity* pEntity, float deltaTime)
 	Vector2 v2Dir = v2MousePos - pEntity->GetPosition();
 	double dist = v2Dir.magnitude();
 
-	if (dist > 50)
+	if (dist > 0)
 	{
 		const double DecelerationTweaker = 0.3;
 
@@ -35,9 +35,9 @@ Vector2 Arrive::Update(Entity* pEntity, float deltaTime)
 		if (speed > 100)
 			speed = 100;
 
-		v2Dir * speed / dist;
+		Vector2 v2DesiredVel = v2Dir * speed / dist;
 
-		return (v2Dir * deltaTime);
+		return (v2DesiredVel - pEntity->GetVelocity());
 	}
 
 	return Vector2(0, 0);

@@ -18,7 +18,7 @@ OAMap::~OAMap()
 {
 	for (int i = 0; i < m_aObstacle.Size(); ++i)
 	{
-		m_aObstacle[i];
+		delete m_aObstacle[i];
 	}
 }
 
