@@ -255,6 +255,12 @@
     <ClCompile Include="Flocking.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Boid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlockState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssociativeArray.h">
@@ -468,6 +474,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Flocking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Boid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlockState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

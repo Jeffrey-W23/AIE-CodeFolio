@@ -9,6 +9,7 @@
 #include "Enemy2.h"
 #include "Enemy3.h"
 #include "Enemy4.h"
+#include "Boid.h"
 #include "Grid.h"
 #include "OAMap.h"
 
@@ -44,6 +45,13 @@ bool Application2D::startup() {
 	m_Enemy3 = new Enemy3();
 	m_Enemy4 = new Enemy4();
 
+	m_Boids = new DynamicArray<Boid*>();
+	
+	for (int i = 0; i < 30; ++i)
+	{
+		m_Boids->PushBack(new Boid(m_Boids));
+	}
+
 	//m_cameraX = -300;
 	//m_cameraY = -150;
 	m_timer = 0;
@@ -69,6 +77,13 @@ void Application2D::shutdown() {
 	delete m_Enemy2;
 	delete m_Enemy3;
 	delete m_Enemy4;
+
+	for (int i = 0; i < m_Boids->Size(); ++i)
+	{
+		delete (*m_Boids)[i];
+	}
+
+	delete m_Boids;
 }
 
 void Application2D::update(float deltaTime) 
@@ -76,6 +91,11 @@ void Application2D::update(float deltaTime)
 	m_Enemy->Update(deltaTime);
 	m_Enemy4->Update(deltaTime);
 	m_timer += deltaTime;
+
+	for (int i = 0; i < m_Boids->Size(); ++i)
+	{
+		(*m_Boids)[i]->Update(deltaTime);
+	}
 
 	// input example
 	aie::Input* input = aie::Input::getInstance();
@@ -147,6 +167,11 @@ void Application2D::draw() {
 	m_Enemy2->Draw(m_2dRenderer);
 	m_Enemy3->Draw(m_2dRenderer);
 	m_Enemy4->Draw(m_2dRenderer);
+
+	for (int i = 0; i < m_Boids->Size(); ++i)
+	{
+		(*m_Boids)[i]->Draw(m_2dRenderer);
+	}
 
 	//// demonstrate animation
 	//m_2dRenderer->setUVRect(int(m_timer) % 8 / 8.0f, 0, 1.f / 8, 1.f / 8);

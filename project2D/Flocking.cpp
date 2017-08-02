@@ -1,29 +1,32 @@
 #include "Flocking.h"
 #include "Input.h"
 #include "Entity.h"
+#include "Boid.h"
+#include "Vector2.h"
 using namespace aie;
 
-Flocking::Flocking(float fWeighting) : IBehaviour(fWeighting)
+Flocking::Flocking(float fWeighting, DynamicArray<Boid*>* aEntityList) : IBehaviour(fWeighting)
 {
+	m_aEntities = aEntityList;
 }
 
 Flocking::~Flocking()
 {
 }
 
-Vector2 Flocking::ComputeAlignment(Entity* pEntity, DynamicArray<Entity*> Entities)
+Vector2 Flocking::ComputeAlignment(Entity* pEntity)
 {
 	Vector2 v2Point;
 	int nNeighborCount = 0;
 
-	for (int i = 0; i < Entities.Size(); ++i)
+	for (int i = 0; i < m_aEntities->Size(); ++i)
 	{
-		if (Entities[i] != pEntity)
+		if ((*m_aEntities)[i] != pEntity)
 		{
-			if (Vector2::Distance(Entities[i]->GetPosition(), pEntity->GetPosition()) < 300)
+			if (Vector2::Distance((*m_aEntities)[i]->GetPosition(), pEntity->GetPosition()) < 300)
 			{
-				v2Point.x += Entities[i]->GetVelocity().x;
-				v2Point.y += Entities[i]->GetVelocity().y;
+				v2Point.x += (*m_aEntities)[i]->GetVelocity().x;
+				v2Point.y += (*m_aEntities)[i]->GetVelocity().y;
 				nNeighborCount++;
 			}
 		}
@@ -39,19 +42,19 @@ Vector2 Flocking::ComputeAlignment(Entity* pEntity, DynamicArray<Entity*> Entiti
 	return v2Point;
 }
 
-Vector2 Flocking::ComputeCohesion(Entity* pEntity, DynamicArray<Entity*> Entities)
+Vector2 Flocking::ComputeCohesion(Entity* pEntity)
 {
 	Vector2 v2Point;
 	int nNeighborCount = 0;
 
-	for (int i = 0; i < Entities.Size(); ++i)
+	for (int i = 0; i < m_aEntities->Size(); ++i)
 	{
-		if (Entities[i] != pEntity)
+		if ((*m_aEntities)[i] != pEntity)
 		{
-			if (Vector2::Distance(Entities[i]->GetPosition(), pEntity->GetPosition()) < 300)
+			if (Vector2::Distance((*m_aEntities)[i]->GetPosition(), pEntity->GetPosition()) < 300)
 			{
-				v2Point.x += Entities[i]->GetPosition().x;
-				v2Point.y += Entities[i]->GetPosition().y;
+				v2Point.x += (*m_aEntities)[i]->GetPosition().x;
+				v2Point.y += (*m_aEntities)[i]->GetPosition().y;
 				nNeighborCount++;
 			}
 		}
@@ -69,19 +72,19 @@ Vector2 Flocking::ComputeCohesion(Entity* pEntity, DynamicArray<Entity*> Entitie
 	return v2Point;
 }
 
-Vector2 Flocking::ComputeSeparation(Entity* pEntity, DynamicArray<Entity*> Entities)
+Vector2 Flocking::ComputeSeparation(Entity* pEntity)
 {
 	Vector2 v2Point;
 	int nNeighborCount = 0;
 
-	for (int i = 0; i < Entities.Size(); ++i)
+	for (int i = 0; i < m_aEntities->Size(); ++i)
 	{
-		if (Entities[i] != pEntity)
+		if ((*m_aEntities)[i] != pEntity)
 		{
-			if (Vector2::Distance(Entities[i]->GetPosition(), pEntity->GetPosition()) < 300)
+			if (Vector2::Distance((*m_aEntities)[i]->GetPosition(), pEntity->GetPosition()) < 150)
 			{
-				v2Point.x += Entities[i]->GetPosition().x - pEntity->GetPosition.x;
-				v2Point.y += Entities[i]->GetPosition().y - pEntity->GetPosition.y;
+				v2Point.x += (*m_aEntities)[i]->GetPosition().x - pEntity->GetPosition().x;
+				v2Point.y += (*m_aEntities)[i]->GetPosition().y - pEntity->GetPosition().y;
 				nNeighborCount++;
 			}
 		}
@@ -102,15 +105,15 @@ Vector2 Flocking::ComputeSeparation(Entity* pEntity, DynamicArray<Entity*> Entit
 
 Vector2 Flocking::Update(Entity* pEntity, float deltaTime)
 {
-	DynamicArray<Entity*> Entities; // temp // Singlton?
-
-	Vector2 v2Alignment = ComputeAlignment(pEntity, Entities); // Maybe add wight to each to further improve.
-	Vector2 v2Cohesion = ComputeCohesion(pEntity, Entities); // Maybe add wight to each to further improve.
-	Vector2 v2Separation = ComputeSeparation(pEntity, Entities); // Maybe add wight to each to further improve.
+	Vector2 v2Alignment = ComputeAlignment(pEntity); // Maybe add wight to each to further improve.
+	Vector2 v2Cohesion = ComputeCohesion(pEntity); // Maybe add wight to each to further improve.
+	Vector2 v2Separation = ComputeSeparation(pEntity); // Maybe add wight to each to further improve.
 
 	Vector2 vel = pEntity->GetVelocity();
-	vel.x += (v2Alignment.x + v2Cohesion.x + v2Separation.x);
-	vel.y += (v2Alignment.y + v2Cohesion.y + v2Separation.y);
+	vel.x += (v2Alignment.x * 8.0f + v2Cohesion.x * 12.0f + v2Separation.x * 12.0f);
+	vel.y += (v2Alignment.y * 8.0f + v2Cohesion.y * 12.0f + v2Separation.y * 12.0f);
 	vel.normalise();
 	vel *= 80;
+
+	return vel;
 }

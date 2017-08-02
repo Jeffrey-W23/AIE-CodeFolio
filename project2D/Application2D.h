@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Audio.h"
+#include "DynamicArray.h"
 
 class AIBehaviourTree;
 class Enemy;
@@ -9,6 +10,7 @@ class Enemy1;
 class Enemy2;
 class Enemy3;
 class Enemy4;
+class Boid;
 class Player;
 
 enum EWhatEntity
@@ -48,6 +50,7 @@ protected:
 	Enemy2* m_Enemy2;
 	Enemy3* m_Enemy3;
 	Enemy4* m_Enemy4;
+	DynamicArray<Boid*>* m_Boids;
 	AIBehaviourTree* m_BehaviourTree;
 	EWhatEntity m_eEntityType;
 };

@@ -94,6 +94,7 @@
     <ClCompile Include="Application2D.cpp" />
     <ClCompile Include="AStar.cpp" />
     <ClCompile Include="BaseObstacle.cpp" />
+    <ClCompile Include="Boid.cpp" />
     <ClCompile Include="BTAFlee.cpp" />
     <ClCompile Include="BTASeek.cpp" />
     <ClCompile Include="BTAStop.cpp" />
@@ -106,6 +107,7 @@
     <ClCompile Include="Enemy3.cpp" />
     <ClCompile Include="Enemy4.cpp" />
     <ClCompile Include="Flocking.cpp" />
+    <ClCompile Include="FlockState.cpp" />
     <ClCompile Include="OAMap.cpp" />
     <ClCompile Include="ObstacleAvoidance.cpp" />
     <ClCompile Include="QWhatBehaviour.cpp" />
@@ -149,6 +151,7 @@
     <ClInclude Include="BaseAnwser.h" />
     <ClInclude Include="BaseDecision.h" />
     <ClInclude Include="BaseObstacle.h" />
+    <ClInclude Include="Boid.h" />
     <ClInclude Include="BTAFlee.h" />
     <ClInclude Include="BTASeek.h" />
     <ClInclude Include="BTAStop.h" />
@@ -164,6 +167,7 @@
     <ClInclude Include="Enemy3.h" />
     <ClInclude Include="Enemy4.h" />
     <ClInclude Include="Flocking.h" />
+    <ClInclude Include="FlockState.h" />
     <ClInclude Include="OAMap.h" />
     <ClInclude Include="ObstacleAvoidance.h" />
     <ClInclude Include="QWhatBehaviour.h" />
