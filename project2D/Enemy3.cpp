@@ -20,7 +20,7 @@ Enemy3::Enemy3()
 	m_acceleration = Vector2(0, 0);
 	m_velocity = Vector2(0, 0);
 	m_position = Vector2(0, 0);
-	SetPosition(Vector2(1000, 500));
+	SetPosition(Vector2(1000, 360));
 
 	m_eBehType = EBEHAVIOURTYPE_STOP;
 

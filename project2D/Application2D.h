@@ -2,23 +2,16 @@
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Audio.h"
-#include "DynamicArray.h"
-
-class AIBehaviourTree;
-class Enemy;
-class Enemy1;
-class Enemy2;
-class Enemy3;
-class Enemy4;
-class Boid;
-class Player;
+#include "StateMachine.h"
 
 enum EWhatEntity
 {
+	EWHATENTITY_PATHFIND,
 	EWHATENTITY_PLAYER,
 	EWHATENTITY_ENEMYSTATE,
 	EWHATENTITY_ENEMYDECTREE,
-	EWHATENTITY_ENEMYBEHTREE
+	EWHATENTITY_ENEMYBEHTREE,
+	EWHATENTITY_FLOCKING
 };
 
 class Application2D : public aie::Application {
@@ -34,23 +27,12 @@ public:
 	virtual void draw();
 
 protected:
-
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Texture*		m_texture;
 	aie::Texture*		m_shipTexture;
 	aie::Font*			m_font;
 	aie::Audio*			m_audio;
 
-	//float m_cameraX, m_cameraY;
-	float m_timer;
-
-	Player* m_Player;
-	Enemy* m_Enemy;
-	Enemy1* m_Enemy1;
-	Enemy2* m_Enemy2;
-	Enemy3* m_Enemy3;
-	Enemy4* m_Enemy4;
-	DynamicArray<Boid*>* m_Boids;
-	AIBehaviourTree* m_BehaviourTree;
 	EWhatEntity m_eEntityType;
+	StateMachine* m_StateMachine;
 };

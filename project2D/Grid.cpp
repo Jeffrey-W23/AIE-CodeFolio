@@ -24,7 +24,7 @@ Grid::Grid()
 			// Calculate the index 
 			int index = (y * GRID_SIZE) + x;
 
-			Vector2 pos(x * NODE_SIZE + 150, y * NODE_SIZE + 150);
+			Vector2 pos(x * NODE_SIZE + 400, y * NODE_SIZE + 150);
 			m_ppGrid[index] = new GridNode(pos, index, x, y);
 
 			if (x % 3 == 0 && y != 5)

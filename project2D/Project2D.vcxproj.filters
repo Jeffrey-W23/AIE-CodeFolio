@@ -106,6 +106,24 @@
     <Filter Include="Artificial Intelligence\State Machine\Sources">
       <UniqueIdentifier>{ae534753-8dee-4157-bd57-738fe225e51f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Artificial Intelligence\Obstacle Avoidance">
+      <UniqueIdentifier>{a81bac5f-1def-48b5-87dd-62c3940e2a28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Entities">
+      <UniqueIdentifier>{9f6962b6-640f-4688-b886-f54af206761e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Entities\Headers">
+      <UniqueIdentifier>{a17a9f70-c9fa-47d8-9696-14768c87d422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Entities\Sources">
+      <UniqueIdentifier>{8e8e78bd-1144-45bf-8337-eab7fe849f73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Obstacle Avoidance\Headers">
+      <UniqueIdentifier>{0485130a-7f95-43e6-9507-a1422fe29e27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Artificial Intelligence\Obstacle Avoidance\Sources">
+      <UniqueIdentifier>{3a3dd6c0-f1f8-4e17-83dc-51feb07c3de0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ObjectPool.cpp">
@@ -171,15 +189,6 @@
     <ClCompile Include="AIStateMachine.cpp">
       <Filter>Artificial Intelligence\State Machine\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Other\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Other\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy1.cpp">
-      <Filter>Other\Sources</Filter>
-    </ClCompile>
     <ClCompile Include="FollowState.cpp">
       <Filter>Artificial Intelligence\State Machine\Sources</Filter>
     </ClCompile>
@@ -198,9 +207,6 @@
     <ClCompile Include="ControllerState.cpp">
       <Filter>Artificial Intelligence\State Machine\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy2.cpp">
-      <Filter>Other\Sources</Filter>
-    </ClCompile>
     <ClCompile Include="QWhatBehaviour.cpp">
       <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
     </ClCompile>
@@ -209,9 +215,6 @@
     </ClCompile>
     <ClCompile Include="AFlee.cpp">
       <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy3.cpp">
-      <Filter>Other\Sources</Filter>
     </ClCompile>
     <ClCompile Include="BTASeek.cpp">
       <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
@@ -231,34 +234,67 @@
     <ClCompile Include="BTQStop.cpp">
       <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy4.cpp">
-      <Filter>Other\Sources</Filter>
-    </ClCompile>
     <ClCompile Include="ObstacleAvoidance.cpp">
       <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
     </ClCompile>
     <ClCompile Include="Arrive.cpp">
       <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="BaseObstacle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="OAMap.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Sqr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Circle.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="FlockState.cpp">
+      <Filter>Artificial Intelligence\State Machine\Sources</Filter>
     </ClCompile>
     <ClCompile Include="Flocking.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Artificial Intelligence\Behaviours\Sources</Filter>
     </ClCompile>
     <ClCompile Include="Boid.cpp">
+      <Filter>Artificial Intelligence\Entities\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Artificial Intelligence\Entities\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy1.cpp">
+      <Filter>Artificial Intelligence\Entities\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy2.cpp">
+      <Filter>Artificial Intelligence\Entities\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy3.cpp">
+      <Filter>Artificial Intelligence\Entities\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy4.cpp">
+      <Filter>Artificial Intelligence\Entities\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Artificial Intelligence\Entities\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseObstacle.cpp">
+      <Filter>Artificial Intelligence\Obstacle Avoidance\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>Artificial Intelligence\Obstacle Avoidance\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="OAMap.cpp">
+      <Filter>Artificial Intelligence\Obstacle Avoidance\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Sqr.cpp">
+      <Filter>Artificial Intelligence\Obstacle Avoidance\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="PathState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FlockState.cpp">
+    <ClCompile Include="PlayerState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SeekFleeState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DecisionState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BehaviourState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlockingState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -374,15 +410,6 @@
     <ClInclude Include="AIStateMachine.h">
       <Filter>Artificial Intelligence\State Machine\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Other\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Other\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy1.h">
-      <Filter>Other\Headers</Filter>
-    </ClInclude>
     <ClInclude Include="FollowState.h">
       <Filter>Artificial Intelligence\State Machine\Headers</Filter>
     </ClInclude>
@@ -401,9 +428,6 @@
     <ClInclude Include="IdleState.h">
       <Filter>Artificial Intelligence\State Machine\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy2.h">
-      <Filter>Other\Headers</Filter>
-    </ClInclude>
     <ClInclude Include="BaseQuestion.h">
       <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
     </ClInclude>
@@ -418,9 +442,6 @@
     </ClInclude>
     <ClInclude Include="AFlee.h">
       <Filter>Artificial Intelligence\Decision Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy3.h">
-      <Filter>Other\Headers</Filter>
     </ClInclude>
     <ClInclude Include="BTBaseNode.h">
       <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
@@ -452,34 +473,67 @@
     <ClInclude Include="BTQStop.h">
       <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy4.h">
-      <Filter>Other\Headers</Filter>
-    </ClInclude>
     <ClInclude Include="ObstacleAvoidance.h">
       <Filter>Artificial Intelligence\Behaviours\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Arrive.h">
       <Filter>Artificial Intelligence\Behaviours\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="BaseObstacle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="OAMap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Sqr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Circle.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="FlockState.h">
+      <Filter>Artificial Intelligence\State Machine\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Flocking.h">
-      <Filter>Header Files</Filter>
+      <Filter>Artificial Intelligence\Behaviours\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Boid.h">
+      <Filter>Artificial Intelligence\Entities\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Artificial Intelligence\Entities\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Artificial Intelligence\Entities\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy2.h">
+      <Filter>Artificial Intelligence\Entities\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy3.h">
+      <Filter>Artificial Intelligence\Entities\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy4.h">
+      <Filter>Artificial Intelligence\Entities\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy1.h">
+      <Filter>Artificial Intelligence\Entities\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseObstacle.h">
+      <Filter>Artificial Intelligence\Obstacle Avoidance\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>Artificial Intelligence\Obstacle Avoidance\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="OAMap.h">
+      <Filter>Artificial Intelligence\Obstacle Avoidance\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqr.h">
+      <Filter>Artificial Intelligence\Obstacle Avoidance\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PathState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FlockState.h">
+    <ClInclude Include="PlayerState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SeekFleeState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DecisionState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BehaviourState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlockingState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

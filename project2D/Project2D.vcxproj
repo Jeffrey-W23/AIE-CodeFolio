@@ -94,6 +94,7 @@
     <ClCompile Include="Application2D.cpp" />
     <ClCompile Include="AStar.cpp" />
     <ClCompile Include="BaseObstacle.cpp" />
+    <ClCompile Include="BehaviourState.cpp" />
     <ClCompile Include="Boid.cpp" />
     <ClCompile Include="BTAFlee.cpp" />
     <ClCompile Include="BTASeek.cpp" />
@@ -104,12 +105,16 @@
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="ControllerState.cpp" />
+    <ClCompile Include="DecisionState.cpp" />
     <ClCompile Include="Enemy3.cpp" />
     <ClCompile Include="Enemy4.cpp" />
     <ClCompile Include="Flocking.cpp" />
+    <ClCompile Include="FlockingState.cpp" />
     <ClCompile Include="FlockState.cpp" />
     <ClCompile Include="OAMap.cpp" />
     <ClCompile Include="ObstacleAvoidance.cpp" />
+    <ClCompile Include="PathState.cpp" />
+    <ClCompile Include="PlayerState.cpp" />
     <ClCompile Include="QWhatBehaviour.cpp" />
     <ClCompile Include="AFlee.cpp" />
     <ClCompile Include="ASeek.cpp" />
@@ -133,6 +138,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="rect.cpp" />
     <ClCompile Include="Seek.cpp" />
+    <ClCompile Include="SeekFleeState.cpp" />
     <ClCompile Include="Sqr.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateMachine.cpp" />
@@ -151,6 +157,7 @@
     <ClInclude Include="BaseAnwser.h" />
     <ClInclude Include="BaseDecision.h" />
     <ClInclude Include="BaseObstacle.h" />
+    <ClInclude Include="BehaviourState.h" />
     <ClInclude Include="Boid.h" />
     <ClInclude Include="BTAFlee.h" />
     <ClInclude Include="BTASeek.h" />
@@ -164,12 +171,16 @@
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="BTComposite.h" />
     <ClInclude Include="ControllerState.h" />
+    <ClInclude Include="DecisionState.h" />
     <ClInclude Include="Enemy3.h" />
     <ClInclude Include="Enemy4.h" />
     <ClInclude Include="Flocking.h" />
+    <ClInclude Include="FlockingState.h" />
     <ClInclude Include="FlockState.h" />
     <ClInclude Include="OAMap.h" />
     <ClInclude Include="ObstacleAvoidance.h" />
+    <ClInclude Include="PathState.h" />
+    <ClInclude Include="PlayerState.h" />
     <ClInclude Include="QWhatBehaviour.h" />
     <ClInclude Include="AFlee.h" />
     <ClInclude Include="ASeek.h" />
@@ -206,6 +217,7 @@
     <ClInclude Include="Seek.h" />
     <ClInclude Include="BTSelector.h" />
     <ClInclude Include="BTSequence.h" />
+    <ClInclude Include="SeekFleeState.h" />
     <ClInclude Include="Sqr.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="State.h" />

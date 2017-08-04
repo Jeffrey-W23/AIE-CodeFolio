@@ -6,12 +6,12 @@ OAMap* OAMap::m_instance = nullptr;
 
 OAMap::OAMap()
 {
-	m_aObstacle.PushBack(new Circle(Vector2(250, 250), 50));
-	m_aObstacle.PushBack(new Sqr(Vector2(350, 400), 50));
-	m_aObstacle.PushBack(new Circle(Vector2(150, 300), 50));
-	m_aObstacle.PushBack(new Sqr(Vector2(600, 430), 50));
-	m_aObstacle.PushBack(new Circle(Vector2(700, 250), 50));
-	m_aObstacle.PushBack(new Sqr(Vector2(550, 100), 50));
+	m_aObstacle.PushBack(new Circle(Vector2(250, 365), 50));
+	m_aObstacle.PushBack(new Sqr(Vector2(350, 515), 50));
+	m_aObstacle.PushBack(new Circle(Vector2(150, 415), 50));
+	m_aObstacle.PushBack(new Sqr(Vector2(600, 545), 50));
+	m_aObstacle.PushBack(new Circle(Vector2(700, 365), 50));
+	m_aObstacle.PushBack(new Sqr(Vector2(550, 215), 50));
 }
 
 OAMap::~OAMap()
