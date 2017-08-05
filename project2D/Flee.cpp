@@ -24,7 +24,7 @@ Vector2 Flee::Update(Entity* pEntity, float deltaTime)
 	if (m_bFleeMouse)
 		vPos = Vector2(nMouseX, nMouseY);
 	else
-		vPos = Vector2(950, 150);
+		vPos = Vector2(1140, 360);
 
 	Vector2 v2Dir = pEntity->GetPosition() - vPos;
 	v2Dir.normalise();

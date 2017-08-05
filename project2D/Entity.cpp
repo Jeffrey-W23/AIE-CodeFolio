@@ -162,40 +162,69 @@ void Entity::LocalToGlobal()
 	localTransform = GlobalTrasform;
 }
 
-
-
-
-
-
-
-
-
-
+//--------------------------------------------------------------------------------------
+// GetForce: Getter for force, gets the entities force.
+//
+// Return:
+//		Vector2: Returns force as a vector2.
+//--------------------------------------------------------------------------------------
 Vector2 Entity::GetForce()
 {
 	return m_force;
 }
 
+//--------------------------------------------------------------------------------------
+// GetVelocity: Getter for velocity, gets the entities velocity.
+//
+// Return:
+//		Vector2: Returns velocity as a vector2.
+//--------------------------------------------------------------------------------------
 Vector2 Entity::GetVelocity()
 {
 	return m_velocity;
 }
 
+//--------------------------------------------------------------------------------------
+// GetAcceleration: Getter for acceleration, gets the entities acceleration.
+//
+// Return:
+//		Vector2: Returns acceleration as a vector2.
+//--------------------------------------------------------------------------------------
 Vector2 Entity::GetAcceleration()
 {
 	return m_acceleration;
 }
 
+//--------------------------------------------------------------------------------------
+// SetForce: Setter for force, sets the force of the entity from the passed in vector.
+//
+// Param:
+//		nForce: Takes in a vector2 force.
+//--------------------------------------------------------------------------------------
 void Entity::SetForce(Vector2 nForce)
 {
 	m_force = nForce;
 }
 
+//--------------------------------------------------------------------------------------
+// SetVelocity: Setter for velocity, sets the velocity of the entity from 
+// the passed in vector.
+//
+// Param:
+//		nVel: Takes in a vector2 velocity.
+//--------------------------------------------------------------------------------------
 void Entity::SetVelocity(Vector2 nVel)
 {
 	m_velocity = nVel;
 }
 
+//--------------------------------------------------------------------------------------
+// SetAcceleration: Setter for acceleration, sets the acceleration of 
+// the entity from the passed in vector.
+//
+// Param:
+//		nAccel: Takes in a vector2 acceleration.
+//--------------------------------------------------------------------------------------
 void Entity::SetAcceleration(Vector2 nAccel)
 {
 	m_acceleration = nAccel;

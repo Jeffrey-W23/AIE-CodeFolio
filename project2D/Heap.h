@@ -1,13 +1,22 @@
+// #include, using, etc
 #pragma once
 #include "DynamicArray.h"
 #include "AStarNode.h"
 #include <math.h>
 
-// Isnt a template yet, change T to what ever it is gonna be used for.
-//template <typename T>
-class Heap
+//--------------------------------------------------------------------------------------
+// Heap object
+//--------------------------------------------------------------------------------------
+class Heap //template <typename T>
 {
 public:
+
+	//--------------------------------------------------------------------------------------
+	// Push: Push Node to the heap.
+	//
+	// Param:
+	//		data: An AStarNode pointer.s
+	//--------------------------------------------------------------------------------------
 	void Push(AStarNode* data)
 	{
 		// Add data to end of array.
@@ -37,6 +46,12 @@ public:
 		}	
 	}
 
+	//--------------------------------------------------------------------------------------
+	// Pop: Pop a Node from the heap.
+	//
+	// Return:
+	//		AStarNode*: Returns an AStarNode pointer.
+	//--------------------------------------------------------------------------------------
 	AStarNode* Pop()
 	{
 		AStarNode* result = m_Data[0];
@@ -78,26 +93,60 @@ public:
 		return result;
 	}
 
+	//--------------------------------------------------------------------------------------
+	// Clear: Clear the heap.
+	//--------------------------------------------------------------------------------------
 	void Clear()
 	{
 		m_Data.Clear();
 	}
 
+	//--------------------------------------------------------------------------------------
+	// GetSize: Get the size of the Heap.
+	//
+	// Return:
+	//		int: Returns an Int for the size of the Heap.
+	//--------------------------------------------------------------------------------------
 	int GetSize() 
 	{
 		return (int)m_Data.Size();
 	}
 
+	//--------------------------------------------------------------------------------------
+	// GetParentIndex: Returns what the parent is of a child in the heap.
+	//
+	// Return:
+	//		int: Returns an int for the parent index.
+	// Param:
+	//		child: An int for what child you want to get a parent for.
+	//--------------------------------------------------------------------------------------
 	int GetParentIndex(int child)
 	{
 		return (child - 1) / 2;
 	}
 
+	//--------------------------------------------------------------------------------------
+	// GetChildIndex: Returns what the child index is in the heap.
+	//
+	// Return:
+	//		int: Returns an int child index.
+	// Param:
+	//		parent: An int parent.
+	//		whichChild: An int for which child you want.
+	//--------------------------------------------------------------------------------------
 	int GetChildIndex(int parent, int whichChild)
 	{
 		return (2 * parent) + whichChild;
 	}
 
+	//--------------------------------------------------------------------------------------
+	// Contains: Check if the Heap contains a ceartain node.
+	//
+	// Return:
+	//		int: Returns the index of the node you are checking.
+	// Param:
+	//		pData: The AStarNode you want to check is in the Heap.
+	//--------------------------------------------------------------------------------------
 	int Contains(AStarNode* pData)
 	{
 		for (int i = 0; i < m_Data.Size(); ++i)
@@ -109,6 +158,12 @@ public:
 		return -1;
 	}
 
+	//--------------------------------------------------------------------------------------
+	// Resort: Resort the heap by index.
+	//
+	// Param:
+	//		index: index to sort in the heap.
+	//--------------------------------------------------------------------------------------
 	void Resort(int index)
 	{
 		if (index == 0)
@@ -131,6 +186,9 @@ public:
 	}
 
 private:
-	DynamicArray<AStarNode*> m_Data;
 
+	//--------------------------------------------------------------------------------------
+	// A DynamicArray of AStarNode pointers.
+	//--------------------------------------------------------------------------------------
+	DynamicArray<AStarNode*> m_Data;
 };

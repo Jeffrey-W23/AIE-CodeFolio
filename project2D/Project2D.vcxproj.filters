@@ -216,19 +216,7 @@
     <ClCompile Include="AFlee.cpp">
       <Filter>Artificial Intelligence\Decision Tree\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="BTASeek.cpp">
-      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="BTAFlee.cpp">
-      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
-    </ClCompile>
     <ClCompile Include="BTAStop.cpp">
-      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="BTQSeek.cpp">
-      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="BTQFlee.cpp">
       <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
     </ClCompile>
     <ClCompile Include="BTQStop.cpp">
@@ -249,21 +237,6 @@
     <ClCompile Include="Boid.cpp">
       <Filter>Artificial Intelligence\Entities\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Artificial Intelligence\Entities\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy1.cpp">
-      <Filter>Artificial Intelligence\Entities\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy2.cpp">
-      <Filter>Artificial Intelligence\Entities\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy3.cpp">
-      <Filter>Artificial Intelligence\Entities\Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy4.cpp">
-      <Filter>Artificial Intelligence\Entities\Sources</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Artificial Intelligence\Entities\Sources</Filter>
     </ClCompile>
@@ -279,23 +252,44 @@
     <ClCompile Include="Sqr.cpp">
       <Filter>Artificial Intelligence\Obstacle Avoidance\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="PathState.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="BTAObAv.cpp">
+      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerState.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="BTQObAv.cpp">
+      <Filter>Artificial Intelligence\Behaviour Tree\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="SeekFleeState.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="PathFindEntity1.cpp">
+      <Filter>Artificial Intelligence\Entities\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="DecisionState.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="PathFindEntity2.cpp">
+      <Filter>Artificial Intelligence\Entities\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SeekFleeEntity.cpp">
+      <Filter>Artificial Intelligence\Entities\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DecisionEntity.cpp">
+      <Filter>Artificial Intelligence\Entities\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BehaviourEntity.cpp">
+      <Filter>Artificial Intelligence\Entities\Sources</Filter>
     </ClCompile>
     <ClCompile Include="BehaviourState.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="DecisionState.cpp">
+      <Filter>Other\Sources</Filter>
     </ClCompile>
     <ClCompile Include="FlockingState.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="PathState.cpp">
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerState.cpp">
+      <Filter>Other\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SeekFleeState.cpp">
+      <Filter>Other\Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -455,19 +449,7 @@
     <ClInclude Include="BTSelector.h">
       <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="BTASeek.h">
-      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="BTAFlee.h">
-      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
-    </ClInclude>
     <ClInclude Include="BTAStop.h">
-      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="BTQFlee.h">
-      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="BTQSeek.h">
       <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
     </ClInclude>
     <ClInclude Include="BTQStop.h">
@@ -488,22 +470,7 @@
     <ClInclude Include="Boid.h">
       <Filter>Artificial Intelligence\Entities\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Artificial Intelligence\Entities\Headers</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Artificial Intelligence\Entities\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy2.h">
-      <Filter>Artificial Intelligence\Entities\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy3.h">
-      <Filter>Artificial Intelligence\Entities\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy4.h">
-      <Filter>Artificial Intelligence\Entities\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy1.h">
       <Filter>Artificial Intelligence\Entities\Headers</Filter>
     </ClInclude>
     <ClInclude Include="BaseObstacle.h">
@@ -518,23 +485,44 @@
     <ClInclude Include="Sqr.h">
       <Filter>Artificial Intelligence\Obstacle Avoidance\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="PathState.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="BTAObAv.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerState.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="BTQObAv.h">
+      <Filter>Artificial Intelligence\Behaviour Tree\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="SeekFleeState.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="PathFindEntity1.h">
+      <Filter>Artificial Intelligence\Entities\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="DecisionState.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="PathFindEntity2.h">
+      <Filter>Artificial Intelligence\Entities\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SeekFleeEntity.h">
+      <Filter>Artificial Intelligence\Entities\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DecisionEntity.h">
+      <Filter>Artificial Intelligence\Entities\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="BehaviourEntity.h">
+      <Filter>Artificial Intelligence\Entities\Headers</Filter>
     </ClInclude>
     <ClInclude Include="BehaviourState.h">
-      <Filter>Header Files</Filter>
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DecisionState.h">
+      <Filter>Other\Headers</Filter>
     </ClInclude>
     <ClInclude Include="FlockingState.h">
-      <Filter>Header Files</Filter>
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PathState.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerState.h">
+      <Filter>Other\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SeekFleeState.h">
+      <Filter>Other\Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
