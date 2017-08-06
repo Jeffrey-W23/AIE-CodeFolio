@@ -1,14 +1,16 @@
+// #include, using, etc
 #pragma once
 #include "Renderer2D.h"
 #include "DynamicArray.h"
 #include "IBehaviour.h"
 using namespace aie;
 
+// forward declarations
 class AIStateMachine;
 class Entity;
 
 //--------------------------------------------------------------------------------------
-// State object. Inheritance from State.
+// AIState object. Inheritance from State.
 //--------------------------------------------------------------------------------------
 class AIState
 {
@@ -59,5 +61,8 @@ public:
 
 protected:
 
+	//--------------------------------------------------------------------------------------
+	// A DynamicArray of Behaviour pointers.
+	//--------------------------------------------------------------------------------------
 	DynamicArray<IBehaviour*> m_behaviours;
 };

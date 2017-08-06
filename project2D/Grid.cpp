@@ -1,3 +1,4 @@
+// #includes, using, etc
 #include "Grid.h"
 #include <math.h>
 #include "Renderer2D.h"
@@ -7,12 +8,19 @@
 #include "DynamicArray.h"
 #include "AStarNode.h"
 #include "Defines.h"
-
-struct GridNode;
 using namespace aie;
 
+// forward declarations
+struct GridNode;
+
+//--------------------------------------------------------------------------------------
+// The one and only instance of this class
+//--------------------------------------------------------------------------------------
 Grid* Grid::m_instance = nullptr;
 
+//--------------------------------------------------------------------------------------
+// Default Constructor.
+//--------------------------------------------------------------------------------------
 Grid::Grid()
 {
 	m_ppGrid = new GridNode*[GRID_SIZE * GRID_SIZE];
@@ -122,19 +130,13 @@ Grid::Grid()
 			}
 		}
 	}
-
-	// Setup AStar
-	//m_pAStar = new AStar(GRID_SIZE * GRID_SIZE);
-
-	// Set Function pointer
-	//m_pAStar->SetFunction(&Heuristic);
 }
 
-
+//--------------------------------------------------------------------------------------
+// Default Destructor
+//--------------------------------------------------------------------------------------
 Grid::~Grid()
 {
-	//delete m_pAStar;
-
 	for (int i = 0; i < GRID_SIZE * GRID_SIZE; ++i)
 	{
 		delete m_ppGrid[i];
@@ -143,11 +145,20 @@ Grid::~Grid()
 	delete[]m_ppGrid;
 }
 
+//--------------------------------------------------------------------------------------
+// Instance: The function for providing access.
+//--------------------------------------------------------------------------------------
 Grid* Grid::Instance()
 {
 	return m_instance;
 }
 
+//--------------------------------------------------------------------------------------
+// DrawGrid: A function to render (or "draw") objects to the screen.
+//
+// Param:
+//		renderer2D: a pointer to Renderer2D for rendering objects to screen.
+//--------------------------------------------------------------------------------------
 void Grid::DrawGrid(Renderer2D* m_2dRenderer)
 {
 	// Draw the Grid
@@ -190,6 +201,14 @@ void Grid::DrawGrid(Renderer2D* m_2dRenderer)
 	}*/
 }
 
+//--------------------------------------------------------------------------------------
+// GetGrid: Get the grid.
+//
+// Returns:
+//		GetGrid: Returns a GridNode pointer.
+// Param:
+//		nIndex: An int Index for the grid index you want.
+//--------------------------------------------------------------------------------------
 GridNode* Grid::GetGrid(int nIndex)
 {
 	return m_ppGrid[nIndex];

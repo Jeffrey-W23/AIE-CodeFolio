@@ -1,38 +1,41 @@
+// #include, using, etc
 #include "ObstacleAvoidance.h"
 #include "Input.h"
 #include "Entity.h"
 #include "OAMap.h"
 #include "BaseObstacle.h"
 #include <math.h>
-using namespace aie;
 #include <iostream>
+using namespace aie;
 
-
+//--------------------------------------------------------------------------------------
+// Default Constructor. Taking in a float fWeighting.
+//--------------------------------------------------------------------------------------
 ObstacleAvoidance::ObstacleAvoidance(float fWeighting) : IBehaviour(fWeighting)
 {
 }
 
+//--------------------------------------------------------------------------------------
+// Default Destructor
+//--------------------------------------------------------------------------------------
 ObstacleAvoidance::~ObstacleAvoidance()
 {
 }
 
-
-
-
-
-
-
-
-
-
-
+//--------------------------------------------------------------------------------------
+// LineIntersectsRectangle: Does Line Intersects Rectangle.
+//
+// Returns:
+//		bool: Is the line intersecting.
+// Param:
+//		ahead: a Vector coming off the entity.
+//		pos: A Vector for the entity pos.
+//		pObstacle: The Obstacle being checked.
+//--------------------------------------------------------------------------------------
 bool LineIntersectsRectangle(Vector2 ahead, Vector2 pos, BaseObstacle* pObstacle)
 {
-	// ahead
 	Vector2 v2Point1a = pos;
 	Vector2 v2Point1b = ahead;
-	
-	// ahead
 	double minX = v2Point1a.x;
 	double maxX = v2Point1b.x;
 
@@ -43,7 +46,6 @@ bool LineIntersectsRectangle(Vector2 ahead, Vector2 pos, BaseObstacle* pObstacle
 	}
 
 	// Find the intersection of the segment's and rectangle's x-projections
-
 	if (maxX > (pObstacle->m_v2Pos.x + pObstacle->m_fSize))
 	{
 		maxX = (pObstacle->m_v2Pos.x + pObstacle->m_fSize);
@@ -54,13 +56,13 @@ bool LineIntersectsRectangle(Vector2 ahead, Vector2 pos, BaseObstacle* pObstacle
 		minX = pObstacle->m_v2Pos.x - pObstacle->m_fSize;
 	}
 
-	if (minX > maxX) // If their projections do not intersect return false
+	// If their projections do not intersect return false
+	if (minX > maxX) 
 	{
 		return false;
 	}
 
 	// Find corresponding min and max Y for min and max X we found before
-
 	double minY = v2Point1a.y;
 	double maxY = v2Point1b.y;
 
@@ -82,7 +84,6 @@ bool LineIntersectsRectangle(Vector2 ahead, Vector2 pos, BaseObstacle* pObstacle
 	}
 
 	// Find the intersection of the segment's and rectangle's y-projections
-
 	if (maxY > (pObstacle->m_v2Pos.y + pObstacle->m_fSize))
 	{
 		maxY = (pObstacle->m_v2Pos.y + pObstacle->m_fSize);
@@ -93,7 +94,8 @@ bool LineIntersectsRectangle(Vector2 ahead, Vector2 pos, BaseObstacle* pObstacle
 		minY = pObstacle->m_v2Pos.y - pObstacle->m_fSize;
 	}
 
-	if (minY > maxY) // If Y-projections do not intersect return false
+	// If Y-projections do not intersect return false
+	if (minY > maxY)
 	{
 		return false;
 	}
@@ -102,26 +104,32 @@ bool LineIntersectsRectangle(Vector2 ahead, Vector2 pos, BaseObstacle* pObstacle
 	return true;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-// Does Line Intersects Circle
+//--------------------------------------------------------------------------------------
+// LineIntersectsCircle: Does Line Intersects Circle
+//
+// Returns:
+//		bool: Is the line intersecting.
+// Param:
+//		ahead: a Vector coming off the entity.
+//		ahead2: a Vector coming off the entity.
+//		pObstacle: The Obstacle being checked.
+//--------------------------------------------------------------------------------------
 bool LineIntersectsCircle(Vector2 ahead, Vector2 ahead2, BaseObstacle* pObstacle)
 {
 	Vector2 result;
 	return result.Distance(pObstacle->m_v2Pos, ahead) <= pObstacle->m_fSize || result.Distance(pObstacle->m_v2Pos, ahead2) <= pObstacle->m_fSize;
 }
 
-// Find The Most threating Obstacle.
+//--------------------------------------------------------------------------------------
+// findMostThreateningObstacle: Find The Most threating Obstacle.
+//
+// Returns:
+//		BaseObstacle: the obstacle that is most threating.
+// Param:
+//		ahead: a Vector coming off the entity.
+//		ahead2: a Vector coming off the entity.
+//		pEntity: a pointer to an entity.
+//--------------------------------------------------------------------------------------
 BaseObstacle* findMostThreateningObstacle(Entity* pEntity, Vector2 ahead, Vector2 ahead2)
 {
 	OAMap* pOAMap = OAMap::Instance();
@@ -150,39 +158,40 @@ BaseObstacle* findMostThreateningObstacle(Entity* pEntity, Vector2 ahead, Vector
 	return mostThreatening;
 }
 
-// Update
+//--------------------------------------------------------------------------------------
+// Update: A virtual function from IBehaviour to update objects over time.
+//
+// Param:
+//		deltaTime: Pass in deltaTime. A number that updates per second.
+//		pEntity: a pointer to an entity.
+//--------------------------------------------------------------------------------------
 Vector2 ObstacleAvoidance::Update(Entity* pEntity, float deltaTime)
 {
+	// Set variables
 	float fMaxSee = 100.0f;
-
 	Vector2 vel = pEntity->GetVelocity();
 	vel.normalise();
-
 	float dynamicLength = pEntity->GetVelocity().magnitude() / 80.0f;
-
 	Vector2 ahead = pEntity->GetPosition() + vel * dynamicLength;
 	Vector2 ahead2 = pEntity->GetPosition() + vel * dynamicLength * 0.5;
-
 	BaseObstacle* mostThreatening = findMostThreateningObstacle(pEntity, ahead, ahead2);
 	Vector2 avoidance = Vector2(0,0);
 
+	// Move the enity if there is a mostThreating.
 	if (mostThreatening != nullptr) 
 	{
 		avoidance.x = ahead.x - mostThreatening->m_v2Pos.x;
 		avoidance.y = ahead.y - mostThreatening->m_v2Pos.y;
-
 		avoidance.normalise();
-
 		avoidance.x = avoidance.x * fMaxSee;
 		avoidance.y = avoidance.y * fMaxSee;
-		//m_fWeighting = 2; //scale up based on distance to obstacle
 	}
 	else 
 	{
 		avoidance.x = 0;
 		avoidance.y = 0;
-		//m_fWeighting = 0;
 	}
 
+	// return the avoidance weight
 	return avoidance;
 }

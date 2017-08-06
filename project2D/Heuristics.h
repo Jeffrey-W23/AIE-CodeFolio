@@ -1,20 +1,30 @@
+// #includes, using, etc
 #pragma once
 #include "AStarNode.h"
 #include "GridNode.h"
 #include "Defines.h"
 
-// Did I put it in the right place, am I doing it right? ASK RICHARD
+//--------------------------------------------------------------------------------------
+// Heuristic. The Heuristic used for the astar path finding.
+//
+// Returns:
+//		Int: Returns an int
+// Param:
+//		pNode: an AStarNode pointer.
+//		pEnd: an AStarNode pointer.
+//--------------------------------------------------------------------------------------
 static int Heuristic(AStarNode* pNode, AStarNode* pEnd)
 {
-	// Make custom Heuristic for higher then credit mark
-
+	//---------------------------------------------------------
 	// Manhattan Distance (Melbourne Method)
+	//---------------------------------------------------------
 	/*int difX = ((GridNode*)pNode)->m_nIndexX - ((GridNode*)pEnd)->m_nIndexX;
 	int difY = ((GridNode*)pNode)->m_nIndexY - ((GridNode*)pEnd)->m_nIndexY;
-
 	return (abs(difX) + abs(difY)) * 10;*/
 
+	//---------------------------------------------------------
 	// Digonal Shortcut Method
+	//---------------------------------------------------------
 	int difX = ((GridNode*)pNode)->m_nIndexX - ((GridNode*)pEnd)->m_nIndexX;
 	int difY = ((GridNode*)pNode)->m_nIndexY - ((GridNode*)pEnd)->m_nIndexY;
 

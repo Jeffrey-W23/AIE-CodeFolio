@@ -1,18 +1,26 @@
+// #includes, using, etc
 #include "AStar.h"
 #include "GridNode.h"
 #include <math.h>
 
+//--------------------------------------------------------------------------------------
+// Default Constructor. Taking in an int nMaxNodes.
+//--------------------------------------------------------------------------------------
 AStar::AStar(int nMaxNodes)
 {
 	m_ClosedList = new bool[nMaxNodes];
 	m_MaxNode = nMaxNodes;
 }
 
+//--------------------------------------------------------------------------------------
+// Default Destructor
+//--------------------------------------------------------------------------------------
 AStar::~AStar()
 {
 	delete[] m_ClosedList;
 }
 
+// Call the function pointer.
 int AStar::Callfunction(AStarNode* pStart, AStarNode* pEnd)
 {
 	if (fn_CalcHeuristic)
@@ -21,11 +29,22 @@ int AStar::Callfunction(AStarNode* pStart, AStarNode* pEnd)
 	return 0;
 }
 
+// Set the function pointer.
 void AStar::SetFunction(CalcHeuristic func)
 {
 	fn_CalcHeuristic = func;
 }
 
+//--------------------------------------------------------------------------------------
+// CalculatePath: Calculate the Astar path.
+//
+// Returns:
+//		bool: Returns true or false if a path is found or not.
+// Param:
+//		pStart: AStarNode pointer for the start of the path.
+//		pEnd: AStarNode pointer for the end of the path.
+//		finishedPath: A DynamicArray pointer of AstarNode pointers.
+//--------------------------------------------------------------------------------------
 bool AStar::CalculatePath(AStarNode* pStart, AStarNode* pEnd, DynamicArray<AStarNode*>* finishedPath)
 {
 	//http://www.policyalmanac.org/games/aStarTutorial.htm

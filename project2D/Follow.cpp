@@ -1,3 +1,4 @@
+// #include, using, etc
 #include "Follow.h"
 #include "Entity.h"
 #include "AStarNode.h"
@@ -7,34 +8,50 @@
 #include "AStar.h"
 #include <math.h>
 #include "Heuristics.h"
-
-struct GridNode;
 using namespace aie;
 
+// forward declarations
+struct GridNode;
+
+//--------------------------------------------------------------------------------------
+// Default Constructor. Taking in a int fWeighting, an int for the start node and end.
+//--------------------------------------------------------------------------------------
 Follow::Follow(float fWeighting, int nStart, int nEnd) : IBehaviour(fWeighting)
 {
+	// new instance of the grid.
 	Grid* pGrid = Grid::Instance();
-
 	m_pGrid = pGrid;
 
 	// Setup AStar
 	m_pAStar = new AStar(GRID_SIZE * GRID_SIZE);
 
+	// set function pointer
 	m_pAStar->SetFunction(&Heuristic);
 
+	// set vars
 	m_NextNode = 0;
-
 	m_nStart = nStart;
 	m_nEnd = nEnd;
 }
 
+//--------------------------------------------------------------------------------------
+// Default Destructor
+//--------------------------------------------------------------------------------------
 Follow::~Follow()
 {
 	delete m_pAStar;
 }
 
+//--------------------------------------------------------------------------------------
+// Update: A virtual function from IBehaviour to update objects over time.
+//
+// Param:
+//		deltaTime: Pass in deltaTime. A number that updates per second.
+//		pEntity: a pointer to an entity.
+//--------------------------------------------------------------------------------------
 Vector2 Follow::Update(Entity* pEntity, float deltaTime)
 {
+	// Calculate the Astar path to follow
 	m_path.Clear();
 	m_pAStar->CalculatePath(m_pGrid->GetGrid(m_nStart), m_pGrid->GetGrid(m_nEnd), &m_path);
 
@@ -57,7 +74,6 @@ Vector2 Follow::Update(Entity* pEntity, float deltaTime)
 		++m_NextNode;
 	}
 
+	// return the follow weight
 	return dir * 80.0 * deltaTime;
 }
-
-//http://natureofcode.com/book/chapter-6-autonomous-agents/
